@@ -12,17 +12,51 @@
 <div class="card">
     <!-- Paso 1 -->
     <div class="form-step card" id="step1">
-        <div class="card-header">Paso 1</div>
+        <div class="card-header">Información General</div>
         <div class="card-body">
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+            <!-- Número de Plaza -->
+            <div class="form-group d-flex align-items-center">
+                <label for="plazaNumber" class="col-md-2">Número de Plaza:</label>
+                <div class="col-md-4">
+                    <input type="number" class="form-control" id="plazaNumber" placeholder="Ingresa el número de plaza" maxlength="5">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-secondary" style="margin-left: 1rem;" onclick="buscarPorNumeroDePlaza()">Buscar</button>
+                </div>
             </div>
+
+
+            <hr> <!-- Línea horizontal -->
+            <!-- Dependencia -->
+            <div class="form-group">
+                <label for="dependencia">Dependencia:</label>
+                <select class="form-control" id="dependencia" disabled>
+                    <!-- Las opciones se llenarán dinámicamente -->
+                </select>
+            </div>
+
+            <!-- Cargo -->
+            <div class="form-group">
+                <label for="cargo">Nombre del Cargo:</label>
+                <select class="form-control" id="cargo" onchange="cargarTrabajadoresPorCargo()">
+                    <!-- Las opciones se llenarán dinámicamente -->
+                </select>
+            </div>
+
+            <!-- Encargado Actual -->
+            <div class="form-group">
+                <label for="encargado">Encargado Actual:</label>
+                <select class="form-control" id="encargado" onchange="obtenerNumeroDePlaza()">
+                    <!-- Las opciones se llenarán dinámicamente -->
+                </select>
+            </div>
+
             <div class="btn-container">
-                <button class="btn btn-primary pull-right" onclick="nextStep(2)">Siguiente</button>
+                <button class="btn btn-primary pull-right" onclick="validarYContinuar()">Siguiente</button>
             </div>
         </div>
     </div>
+
 
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">

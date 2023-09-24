@@ -62,3 +62,28 @@ function clearFields() {
         }
     });
 }
+
+
+//PRIMERA PARTE DEL FORMULARIO
+function buscarPorNumeroDePlaza() {
+    // Aquí se realizará la solicitud AJAX para buscar por número de plaza
+    // Si la respuesta es OK, se autocompletan los campos
+    // Si hay un error, se muestra un mensaje
+}
+
+function cargarTrabajadoresPorCargo() {
+    // Aquí se realizará la solicitud AJAX para obtener los trabajadores por cargo
+    // Se llenará el select de encargado con las opciones recibidas
+}
+
+function obtenerNumeroDePlaza() {
+    // Aquí se realizará la solicitud AJAX para obtener el número de plaza
+    // Se autocompletará el campo de número de plaza
+}
+
+function validarYContinuar() {
+    // Aquí se realizará la solicitud AJAX para validar la información
+    // Si la información es correcta, se pasa al siguiente paso
+    // Si hay un error, se muestra un mensaje
+    nextStep(2);
+}
