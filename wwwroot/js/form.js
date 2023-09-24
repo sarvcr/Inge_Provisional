@@ -12,7 +12,7 @@ function nextStep(step) {
     // Actualiza el indicador de progreso
     updateProgress(step);
     // Cambia el texto del botón en el último paso
-    if (step === 3) {
+    if (step === 6) {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
