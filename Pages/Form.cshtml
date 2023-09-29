@@ -112,26 +112,7 @@
             </div>
         </div>
     </div>
-    <script>
-        function toggleTextBox() {
-            var selectElement = document.getElementById('responsibility');
-            var additionalInfoDiv = document.getElementById('additionalInfo');
-            var additionalText = document.getElementById('additionalText');
-
-            if (selectElement.value === "si") {
-                additionalInfoDiv.style.display = "block";
-                additionalText.value = "proyecto a, plan z...";
-            } else {
-                additionalInfoDiv.style.display = "none";
-                additionalText.value = "";
-            }
-
-            additionalText.addEventListener('input', function clearText() {
-                additionalText.removeEventListener('input', clearText);
-                additionalText.value = "";
-            });
-        }
-        </script>
+   
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
         <div class="card-header">Paso 4</div>
