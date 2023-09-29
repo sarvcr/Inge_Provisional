@@ -223,24 +223,442 @@
             </div>
         </div>
     </div>
-    <!-- Paso 6 -->
+    <!-- Paso 6 Valor de las principales variables que influyen en la solicitud de un puesto clave-->
     <div class="form-step card" id="step6" style="display:none;">
-        <div class="card-header">Paso 6</div>
+        <div class="card-header">Paso 6 - Asignación de Puntuación</div>
         <div class="card-body">
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com">
-            </div>
-            <div class="form-group">
-                <label for="gender">Género:</label>
-                <select class="form-control" id="gender">
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
-                </select>
-            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Variables</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Conocimiento -->
+                    <tr>
+                        <td>Conocimiento</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Conocimiento', 1)">
+                                Se requiere
+                                conocimientos básicos, propios de la educación primaria.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Conocimiento', 2)">
+                                Conocimientos fáciles
+                                de adquirir mediante observación y adiestramiento (empírica).
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Conocimiento', 3)">
+                                Conocimientos básicos
+                                propios de la educación secundaria (bachiller en educación media).
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Conocimiento', 4)">
+                                Conocimientos
+                                avanzados
+                                en temas técnicos propios
+                                de la naturaleza de AyA.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Conocimiento', 5)">
+                                Conocimientos
+                                especializados en temas
+                                técnicos propios de la
+                                naturaleza de AyA.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Experiencia -->
+                    <tr>
+                        <td>Experiencia</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Experiencia', 1)">No requiere.</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Experiencia', 2)">
+                                Mínimo Seis meses de
+                                experiencia en funciones
+                                de la misma naturaleza del
+                                Puesto.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Experiencia', 3)">
+                                Dos años de
+                                experiencia
+                                en funciones de la misma
+                                naturaleza del Puesto.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Experiencia', 4)">
+                                Tres años de
+                                experiencia
+                                en funciones de la misma
+                                naturaleza del Puesto.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Experiencia', 5)">
+                                Cuatro años de
+                                experiencia en funciones
+                                de la misma naturaleza del
+                                Puesto.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Responsabilidad -->
+                    <tr>
+                        <td>Responsabilidad</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Responsabilidad', 1)">
+                                Sus acciones
+                                tienen
+                                impacto directo
+                                únicamente en el proceso
+                                al que pertenece.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Responsabilidad', 2)">
+                                Sus acciones
+                                tienen
+                                impacto directo sobre la
+                                dependencia a la que
+                                pertenece .
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Responsabilidad', 3)">
+                                Sus acciones hacen
+                                posible
+                                cumplir la razón de ser de
+                                la dependencia.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Responsabilidad', 4)">
+                                Sus acciones
+                                tienen
+                                impacto directo en la
+                                prestación de los servicios,
+                                asesoría y
+                                fiscalización que brinda la
+                                institución
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Responsabilidad', 5)">
+                                Sus acciones
+                                tienen un
+                                impacto directo en las
+                                actividades relacionadas
+                                con la población que
+                                atiende AyA .
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Planes o Proyectos -->
+                    <tr>
+                        <td>Planes o Proyectos</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Planes o Proyectos', 1)">
+                                Su ausencia (de
+                                la persona
+                                que ocupa el puesto ) impacta
+                                directamente la
+                                consecución de las metas
+                                asignadas.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Planes o Proyectos', 2)">
+                                Su ausencia (de
+                                la persona
+                                que ocupa el puesto ) impacta
+                                directamente en la
+                                consecución de los planes
+                                anuales operativos de la
+                                dependencia.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Planes o Proyectos', 3)">
+                                Su ausencia (de
+                                la persona
+                                que ocupa el puesto ) impide
+                                la consecución de los
+                                planes anuales operativos
+                                de la Dependencia.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Planes o Proyectos', 4)">
+                                Su ausencia (de
+                                la persona
+                                que ocupa el puesto ) impacta
+                                en la consecución de los
+                                objetivos estratégicos de
+                                AyA .
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Planes o Proyectos', 5)">
+                                Su ausencia (de
+                                la persona
+                                que ocupa el puesto ) impide
+                                la consecución de
+                                objetivos estratégicos de
+                                AyA.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Presupuesto y/o Activos Institucionales -->
+                    <tr>
+                        <td>Presupuesto y/o Activos Institucionales</td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 1)">
+                                De ¢0.00 a
+                                9,999,999.99.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 2)">
+                                De ¢10,000,000.00 a
+                                ¢29,999,999.99.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 3)">
+                                De 30,000,000.00 a
+                                49,999,999.99.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 4)">
+                                De ¢50,000,000.00 a
+                                ¢99,999,999.99.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 5)">
+                                De ¢100,000,000.00 o
+                                más.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Consecuencia del Error -->
+                    <tr>
+                        <td>Consecuencia del Error</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Consecuencia del Error', 1)">
+                                Los errores
+                                cometidos
+                                pueden ocasionar
+                                trastornos en las
+                                actividades del funcionario,
+                                pero son corregidos con
+                                rapidez y facilidad en el
+                                curso natural del trabajo ;
+                                generando únicamente
+                                atrasos en sus actividades.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Consecuencia del Error', 2)">
+                                Los errores
+                                cometidos
+                                pueden ocasionar
+                                trastornos en las
+                                actividades del proceso en
+                                el que participa ,
+                                generando atraso en las
+                                mismas.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Consecuencia del Error', 3)">
+                                Los errores
+                                cometidos
+                                pueden ocasionar
+                                trastornos en las
+                                actividades de otros
+                                procesos, generando
+                                atraso en las mismas.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Consecuencia del Error', 4)">
+                                Los errores
+                                cometidos
+                                pueden ocasionar
+                                trastornos en la gestión
+                                institucional , generando
+                                pérdidas económicas
+                                cuantificables que
+                                redundarán en perjuicio al
+                                cliente y/o sociedad civil.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Consecuencia del Error', 5)">
+                                Los errores
+                                cometidos
+                                pueden ocasionar
+                                trastornos en la calidad de
+                                los servicios públicos de
+                                agua potable,
+                                saneamiento e hidrantes,
+                                generando problemas en la
+                                salud de una población.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Funcionamiento de Procesos Medulares del AyA -->
+                    <tr>
+                        <td>Funcionamiento de Procesos Medulares del AyA</td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 1)">
+                                La ausencia por
+                                más de
+                                cinco días (de la persona que
+                                ocupa el puesto ) provoca
+                                dos días de atraso en los
+                                procesos sustantivos.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 2)">
+                                Por cada cinco
+                                días de
+                                ausencia (de la persona que
+                                ocupa el puesto ), provoca al
+                                menos dos días de atraso
+                                en los procesos
+                                sustantivos.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 3)">
+                                Por cada dos
+                                días de
+                                ausencia (de la persona que
+                                ocupa el puesto ), provoca al
+                                menos un día de atraso
+                                en los procesos
+                                sustantivos.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 4)">
+                                Por cada día de
+                                ausencia
+                                (de la persona que ocupa el
+                                puesto ), provoca un día de
+                                atraso en los procesos
+                                sustantivos.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light"
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 5)">
+                                Por cada día de
+                                ausencia
+                                (de la persona que ocupa el
+                                puesto ), provoca un día de
+                                atraso de forma
+                                inmediata en los procesos
+                                sustantivos.
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Complejidad -->
+                    <tr>
+                        <td>Complejidad</td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Complejidad', 1)">
+                                Ejecuta actividades
+                                rutinarias, repetitivas y
+                                elementales, de acuerdo
+                                con instrucciones precisas.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Complejidad', 2)">
+                                Ejecuta actividades
+                                donde
+                                se aplican normas y
+                                procedimientos
+                                establecidos.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Complejidad', 3)">
+                                Ejecuta actividades de
+                                acuerdo con metas y
+                                objetivos planteados,
+                                donde existen precedentes
+                                pero que requieren para su
+                                desarrollo conocimiento
+                                profesional en alguna de
+                                las áreas de la gestión
+                                institucional.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Complejidad', 4)">
+                                Ejecuta actividades de
+                                acuerdo con políticas y
+                                objetivos institucionales,
+                                que requieren del análisis
+                                de diversas situaciones
+                                donde es frecuente que no
+                                existan precedentes para
+                                atenderlas y que por tanto,
+                                se debe elegir entre varias
+                                opciones de acción.
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="assignScore('Complejidad', 5)">
+                                Ejecuta actividades de
+                                acuerdo con políticas,
+                                estrategias y objetivos
+                                institucionales, normativa
+                                y lineamientos externos,
+                                que exige con base en la
+                                experiencia y el
+                                conocimiento adquirido la
+                                aplicación del juicio para
+                                establecer nuevos métodos
+                                y definir cursos de acción a
+                                seguir por la Institución.
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(5)">Atrás</button>
-                <button class="btn btn-success pull-right" onclick="clearFields()">Enviar</button>
+                <button class="btn btn-success pull-right" onclick="submitScores()">Enviar</button>
             </div>
         </div>
     </div>
