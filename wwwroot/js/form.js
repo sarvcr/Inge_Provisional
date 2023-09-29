@@ -133,6 +133,11 @@ var gestionaActivosSelect = document.getElementById("gestiona-activos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
 
+function toggleTextBox() {
+    var selectElement = document.getElementById('responsibility');
+    var additionalInfoDiv = document.getElementById('additionalInfo');
+    var additionalText = document.getElementById('additionalText');
+
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
@@ -166,7 +171,6 @@ function assignScore(variable, score) {
 
 
 // Estilo adicional para el botón seleccionado (puedes ajustarlo según tus necesidades)
-
 function toggleTextBox() {
     var selectElement = document.getElementById('responsibility');
     var additionalInfoDiv = document.getElementById('additionalInfo');
@@ -185,4 +189,5 @@ function toggleTextBox() {
         additionalText.value = "";
     });
 }
+
 
