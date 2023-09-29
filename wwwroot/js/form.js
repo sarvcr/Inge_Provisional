@@ -1,5 +1,5 @@
 function nextStep(step) {
-    // Si es el último paso, limpiar campos
+    // Si es el ï¿½ltimo paso, limpiar campos
     if (step > 6) {
         clearFields();
         return;
@@ -11,7 +11,7 @@ function nextStep(step) {
     document.getElementById('step' + step).style.display = 'block';
     // Actualiza el indicador de progreso
     updateProgress(step);
-    // Cambia el texto del botón en el último paso
+    // Cambia el texto del boton en el ultimo paso
     if (step === 6) {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
@@ -37,7 +37,7 @@ function toggleTextBox() {
     });
 }
 function prevStep(step) {
-    nextStep(step); // Reutiliza la función nextStep
+    nextStep(step); // Reutiliza la funcion nextStep
 }
 
 function updateProgress(step) {
@@ -58,8 +58,8 @@ function goToStep(step) {
     document.getElementById('step' + step).style.display = 'block';
     // Actualiza el indicador de progreso
     updateProgress(step);
-    // Cambia el texto del botón en el último paso
-    if (step === 3) { // Ajusta este número si tienes más pasos
+    // Cambia el texto del botï¿½n en el ï¿½ltimo paso
+    if (step === 3) { // Ajusta este nï¿½mero si tienes mï¿½s pasos
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
@@ -83,24 +83,24 @@ function clearFields() {
 
 //PRIMERA PARTE DEL FORMULARIO
 function buscarPorNumeroDePlaza() {
-    // Aquí se realizará la solicitud AJAX para buscar por número de plaza
+    // Aquï¿½ se realizarï¿½ la solicitud AJAX para buscar por nï¿½mero de plaza
     // Si la respuesta es OK, se autocompletan los campos
     // Si hay un error, se muestra un mensaje
 }
 
 function cargarTrabajadoresPorCargo() {
-    // Aquí se realizará la solicitud AJAX para obtener los trabajadores por cargo
-    // Se llenará el select de encargado con las opciones recibidas
+    // Aquï¿½ se realizarï¿½ la solicitud AJAX para obtener los trabajadores por cargo
+    // Se llenarï¿½ el select de encargado con las opciones recibidas
 }
 
 function obtenerNumeroDePlaza() {
-    // Aquí se realizará la solicitud AJAX para obtener el número de plaza
-    // Se autocompletará el campo de número de plaza
+    // Aquï¿½ se realizarï¿½ la solicitud AJAX para obtener el nï¿½mero de plaza
+    // Se autocompletarï¿½ el campo de nï¿½mero de plaza
 }
 
 function validarYContinuar() {
-    // Aquí se realizará la solicitud AJAX para validar la información
-    // Si la información es correcta, se pasa al siguiente paso
+    // Aquï¿½ se realizarï¿½ la solicitud AJAX para validar la informaciï¿½n
+    // Si la informaciï¿½n es correcta, se pasa al siguiente paso
     // Si hay un error, se muestra un mensaje
     nextStep(2);
 }
@@ -118,7 +118,7 @@ var impactoSelect = document.getElementById("impacto");
 impactoSelect.addEventListener("change", toggleAfectaObjetivo);
 toggleAfectaObjetivo();
 
-// Función para mostrar u ocultar el campo de valor de activos según la selección del paso #7
+// Funciï¿½n para mostrar u ocultar el campo de valor de activos segï¿½n la selecciï¿½n del paso #7
 function toggleValorActivos() {
     var gestionaActivosSelect = document.getElementById("gestiona-activos");
     var valorActivosDiv = document.getElementById("valor-activos");
@@ -132,6 +132,28 @@ function toggleValorActivos() {
 var gestionaActivosSelect = document.getElementById("gestiona-activos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
+<<<<<<< HEAD
+
+// FunciÃ³n para asignar la puntuaciÃ³n del paso 6 y asegurarse de que solo un botÃ³n por fila estÃ© seleccionado.
+function assignScore(variable, score) {
+    // Obtener todos los botones de la fila actual
+    var rowButtons = document.querySelectorAll(`button[onclick^="assignScore('${variable}',"]`);
+    
+    // Desseleccionar todos los botones de la fila
+    rowButtons.forEach(function(btn) {
+        btn.classList.remove('btn-selected');
+    });
+
+    // Seleccionar el botÃ³n actual
+    var currentButton = document.querySelector(`button[onclick="assignScore('${variable}', ${score})"]`);
+    currentButton.classList.add('btn-selected');
+
+    // AquÃ­ puedes agregar cualquier lÃ³gica adicional que necesites, como almacenar la puntuaciÃ³n en alguna variable o estructura de datos
+}
+
+
+// Estilo adicional para el botÃ³n seleccionado (puedes ajustarlo segÃºn tus necesidades)
+=======
 function toggleTextBox() {
     var selectElement = document.getElementById('responsibility');
     var additionalInfoDiv = document.getElementById('additionalInfo');
@@ -150,3 +172,4 @@ function toggleTextBox() {
         additionalText.value = "";
     });
 }
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268

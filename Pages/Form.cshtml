@@ -18,10 +18,12 @@
             <div class="form-group d-flex align-items-center">
                 <label for="plazaNumber" class="col-md-2">Número de Plaza:</label>
                 <div class="col-md-4">
-                    <input type="number" class="form-control" id="plazaNumber" placeholder="Ingresa el número de plaza" maxlength="5">
+                    <input type="number" class="form-control" id="plazaNumber" placeholder="Ingresa el número de plaza"
+                        maxlength="5">
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-secondary" style="margin-left: 1rem;" onclick="buscarPorNumeroDePlaza()">Buscar</button>
+                    <button class="btn btn-secondary" style="margin-left: 1rem;"
+                        onclick="buscarPorNumeroDePlaza()">Buscar</button>
                 </div>
             </div>
             <!-- Nombre de Plaza -->
@@ -84,17 +86,25 @@
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
             </div>
-            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary" style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">Manual de Puesto</a>
+            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary"
+                style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">Manual de
+                Puesto</a>
         </div>
     </div>
 
- <!-- Paso 3 -->
-<div class="form-step card" id="step3" style="display:none;">
-    <div class="card-header">Impacto del Puesto</div>
-    <div class="card-body">
+    <!-- Paso 3 -->
+    <div class="form-step card" id="step3" style="display:none;">
+        <div class="card-header">Impacto del Puesto</div>
+        <div class="card-body">
             <div class="form-group">
+<<<<<<< HEAD
+                <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la
+                    Dependencia a su cargo?</label><br>
+                <select id="impacto">
+=======
                 <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la Dependencia a su cargo?</label><br>
                 <select class="form-control"  id="impacto">
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                     
@@ -102,11 +112,21 @@
             </div><br>
             <div class="form-group" id="afecta-objetivo" style="display:none;">
                 <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
+<<<<<<< HEAD
+                <textarea class="form-control" id="afecta-objetivo-texto" rows="4"
+                    placeholder="Escribe aquí..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con
+                    un valor superior a los 10 millones de colones?</label><br>
+                <select id="gestiona-activos">
+=======
                 <textarea class="form-control" id="afecta-objetivo-texto" rows="4" placeholder="Escribe aquí..."></textarea>
             </div> <br>
             <div class="form-group">
                 <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un valor superior a los 10 millones de colones?</label><br>
                 <select class ="form-control" id="gestiona-activos">
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                 </select>
@@ -114,6 +134,74 @@
             <div class="form-group" id="valor-activos" style="display:none;">
                 <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
                 <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
+<<<<<<< HEAD
+            </div>
+            <div class="form-group">
+                <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+                <select id="responsibility" onchange="toggleTextBox()">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+            </div>
+            <div id="additionalInfo" style="display:none;">
+                <textarea class="form-control" id="additionalText"></textarea>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
+                <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleTextBox() {
+            var selectElement = document.getElementById('responsibility');
+            var additionalInfoDiv = document.getElementById('additionalInfo');
+            var additionalText = document.getElementById('additionalText');
+
+            if (selectElement.value === "si") {
+                additionalInfoDiv.style.display = "block";
+                additionalText.value = "proyecto a, plan z...";
+            } else {
+                additionalInfoDiv.style.display = "none";
+                additionalText.value = "";
+            }
+
+            additionalText.addEventListener('input', function clearText() {
+                additionalText.removeEventListener('input', clearText);
+                additionalText.value = "";
+            });
+        }
+        function toggleAfectaObjetivo() {
+            var impactoSelect = document.getElementById("impacto");
+            var afectaObjetivoDiv = document.getElementById("afecta-objetivo");
+
+            if (impactoSelect.value === "si") {
+                afectaObjetivoDiv.style.display = "block";
+            } else {
+                afectaObjetivoDiv.style.display = "none";
+            }
+        }
+        var impactoSelect = document.getElementById("impacto");
+        impactoSelect.addEventListener("change", toggleAfectaObjetivo);
+        toggleAfectaObjetivo();
+
+        // Función para mostrar u ocultar el campo de valor de activos según la selección del paso #7
+        function toggleValorActivos() {
+            var gestionaActivosSelect = document.getElementById("gestiona-activos");
+            var valorActivosDiv = document.getElementById("valor-activos");
+
+            if (gestionaActivosSelect.value === "si") {
+                valorActivosDiv.style.display = "block";
+            } else {
+                valorActivosDiv.style.display = "none";
+            }
+        }
+        var gestionaActivosSelect = document.getElementById("gestiona-activos");
+        gestionaActivosSelect.addEventListener("change", toggleValorActivos);
+        toggleValorActivos();
+    </script>
+
+=======
             </div><br>
         <div class="form-group">
             <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
@@ -132,12 +220,14 @@
     </div>
 </div>
     
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
         <div class="card-header">Información del Puesto</div>
         <div class="card-body">
             <div class="form-group">
-                <label for="cantidad-personas">Indicar cantidad de personas capaces de desempeñar las funciones del puesto sin contar a la que lo está haciendo actualmente:</label><br>
+                <label for="cantidad-personas">Indicar cantidad de personas capaces de desempeñar las funciones del
+                    puesto sin contar a la que lo está haciendo actualmente:</label><br>
                 <select class="form-control" id="cantidad-personas">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -151,26 +241,30 @@
             </div>
         </div>
     </div>
-    <!-- Paso 5 -->
+    <!-- Paso 5: Indicar conocimiento -->
     <div class="form-step card" id="step5" style="display:none;">
         <div class="card-header">Indique el conocimiento necesario en las siguientes áreas:</div>
         <div class="card-body">
-     
+
             <div class="form-group">
                 <label for="systems">Sistemas tecnológicos y programas que se utilizan:</label>
-                <textarea class="form-control" id="systems" rows="3"></textarea>
+                <textarea class="form-control" id="systems" rows="3"
+                    placeholder="Especifique los sistemas tecnológicos y programas que se utilizan en el puesto."></textarea>
             </div>
             <div class="form-group">
                 <label for="manejo">Manejo de equipo especializado necesario:</label>
-                <textarea class="form-control" id="manejo" rows="3"></textarea>
+                <textarea class="form-control" id="manejo" rows="3"
+                    placeholder="Indique el equipo especializado que es necesario manejar para el puesto."></textarea>
             </div>
             <div class="form-group">
                 <label for="conocimiento">Conocimiento Conceptual:</label>
-                <textarea class="form-control" id="conocimiento" rows="3"></textarea>
+                <textarea class="form-control" id="conocimiento" rows="3"
+                    placeholder="Describa el tipo de conocimiento teórico que se requiere manejar para el puesto."></textarea>
             </div>
             <div class="form-group">
                 <label for="Dinamica">Dinamica intiticional para la ejecucion de funciones :</label>
-                <textarea class="form-control" id="Dinamica" rows="3"></textarea>
+                <textarea class="form-control" id="Dinamica" rows="3"
+                    placeholder="Especifique las condiciones especiales que se deben conocer del AyA para desempeñar adecuadamente las funciones del puesto."></textarea>
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(4)">Atrás</button>
@@ -178,6 +272,7 @@
             </div>
         </div>
     </div>
+
     <!-- Paso 6 Valor de las principales variables que influyen en la solicitud de un puesto clave-->
     <div class="form-step card" id="step6" style="display:none;">
         <div class="card-header">Paso 6 - Asignación de Puntuación</div>
@@ -382,35 +477,35 @@
                         <td>Presupuesto y/o Activos Institucionales</td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 1)">
+                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 1)">
                                 De ¢0.00 a
                                 9,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 2)">
+                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 2)">
                                 De ¢10,000,000.00 a
                                 ¢29,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 3)">
+                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 3)">
                                 De 30,000,000.00 a
                                 49,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 4)">
+                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 4)">
                                 De ¢50,000,000.00 a
                                 ¢99,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 5)">
+                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 5)">
                                 De ¢100,000,000.00 o
                                 más.
                             </button>
@@ -488,7 +583,7 @@
                         <td>Funcionamiento de Procesos Medulares del AyA</td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 1)">
+                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 1)">
                                 La ausencia por
                                 más de
                                 cinco días (de la persona que
@@ -499,7 +594,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 2)">
+                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 2)">
                                 Por cada cinco
                                 días de
                                 ausencia (de la persona que
@@ -511,7 +606,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 3)">
+                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 3)">
                                 Por cada dos
                                 días de
                                 ausencia (de la persona que
@@ -523,7 +618,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 4)">
+                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 4)">
                                 Por cada día de
                                 ausencia
                                 (de la persona que ocupa el
@@ -534,7 +629,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 5)">
+                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 5)">
                                 Por cada día de
                                 ausencia
                                 (de la persona que ocupa el
@@ -631,7 +726,10 @@
     <script src="~/js/form.js"></script>
 
 </div>
+<<<<<<< HEAD
+=======
 
 
 <script src="~/js/form.js"></script>
 
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268

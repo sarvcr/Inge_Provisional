@@ -25,3 +25,39 @@
 .inactive-circle {
     background-color: lightgray;
 }
+
+/* Estilo base para los botones */
+.btn {
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave para los cambios de color y sombra */
+    border: none; /* Eliminar el borde predeterminado */
+}
+
+/* Estilo para el botón en estado hover (cuando el mouse está encima) */
+.btn:hover {
+    background-color: #e6f0ff; /* Un azul claro */
+}
+
+/* Estilo para el botón en estado activo (cuando se hace clic) */
+.btn:active {
+    background-color: #cce4ff; /* Un azul un poco más oscuro que el hover */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna para dar efecto de presión */
+}
+
+/* Estilo para el botón en estado de foco */
+.btn:focus {
+    outline: none; /* Eliminar el borde de foco predeterminado */
+    box-shadow: 0 0 5px #007BFF; /* Sombra azul alrededor del botón para indicar el foco */
+}
+
+/* Estilo para el botón seleccionado */
+.btn-selected {
+    background-color: #007BFF;  
+    color: white;               
+}
+
+/* Estilo para el botón seleccionado en estado de foco */
+.btn-selected:focus {
+    box-shadow: 0 0 5px #0056b3, 0 0 0 3px rgba(0, 123, 255, 0.5); /* Dos sombras: una azul oscuro y otra azul claro alrededor */
+}
+
+
