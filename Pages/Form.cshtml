@@ -81,37 +81,55 @@
         </div>
     </div>
 
-    <!-- Paso 3 -->
-    <div class="form-step card" id="step3" style="display:none;">
-        <div class="card-header">Impacto del Puesto</div>
-        <div class="card-body">
-            <div class="form-group">
-                <label>Intereses:</label><br>
-                <input type="checkbox" id="interest1" name="interest" value="coding">
-                <label for="interest1"> Programación</label><br>
-                <input type="checkbox" id="interest2" name="interest" value="design">
-                <label for="interest2"> Diseño</label><br>
-                <input type="checkbox" id="interest3" name="interest" value="marketing">
-                <label for="interest3"> Marketing</label><br>
-            </div>
-            <div class="form-group">
-                <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
-                <select  id="responsibility" onchange="toggleTextBox()">
-                    
-                    <option value="no">No</option>
-                    <option value="si">Sí</option>
-                </select>
-            </div>
-            <div   id="additionalInfo" style="display:none;">
-               
-                <textarea class="form-control" id="additionalText"></textarea>
-            </div>
-            <div class="btn-container">
-                <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
-                <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
-            </div>
+ <!-- Paso 3 -->
+<div class="form-step card" id="step3" style="display:none;">
+    <div class="card-header">Impacto del Puesto</div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Intereses:</label><br>
+            <input type="checkbox" id="interest1" name="interest" value="coding">
+            <label for="interest1"> Programación</label><br>
+            <input type="checkbox" id="interest2" name="interest" value="design">
+            <label for="interest2"> Diseño</label><br>
+            <input type="checkbox" id="interest3" name="interest" value="marketing">
+            <label for="interest3"> Marketing</label><br>
+        </div>
+        <div class="form-group">
+            <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+            <select id="responsibility" onchange="toggleTextBox()"> <!-- Call toggleTextBox function here -->
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+        <div id="additionalInfo" style="display:none;">
+            <textarea class="form-control" id="additionalText"></textarea>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
+            <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
         </div>
     </div>
+</div>
+    <script>
+        function toggleTextBox() {
+        var selectElement = document.getElementById('responsibility');
+        var additionalInfoDiv = document.getElementById('additionalInfo');
+        var additionalText = document.getElementById('additionalText');
+
+        if (selectElement.value === "si") {
+        additionalInfoDiv.style.display = "block";
+        additionalText.value = "proyecto a, plan z...";
+        } else {
+        additionalInfoDiv.style.display = "none";
+        additionalText.value = "";
+        }
+
+        additionalText.addEventListener('input', function clearText() {
+        additionalText.removeEventListener('input', clearText);
+        additionalText.value = "";
+        });
+        }
+    </script>
    
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
@@ -136,18 +154,28 @@
     </div>
     <!-- Paso 5 -->
     <div class="form-step card" id="step5" style="display:none;">
-        <div class="card-header">Paso 5</div>
+        <div class="card-header">Conocimiento en áreas</div>
         <div class="card-body">
+     
             <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com">
+                <label for="knowledge">Indique el conocimiento necesario en las siguientes áreas:</label>
+                <textarea class="form-control" id="knowledge" rows="3"></textarea>
             </div>
             <div class="form-group">
-                <label for="gender">Género:</label>
-                <select class="form-control" id="gender">
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
-                </select>
+                <label for="systems">Sistemas tecnológicos y programas que se utilizan:</label>
+                <textarea class="form-control" id="systems" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="manejo">Manejo de equipo especializado necesario:</label>
+                <textarea class="form-control" id="manejo" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="conocimiento">conocimiento conceptual:</label>
+                <textarea class="form-control" id="conocimiento" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Dinamica">Dinamica intiticional para la ejecucion de funciones :</label>
+                <textarea class="form-control" id="Dinamica" rows="3"></textarea>
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(4)">Atrás</button>
