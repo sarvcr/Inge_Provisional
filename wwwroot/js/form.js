@@ -132,3 +132,21 @@ function toggleValorActivos() {
 var gestionaActivosSelect = document.getElementById("gestiona-activos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
+function toggleTextBox() {
+    var selectElement = document.getElementById('responsibility');
+    var additionalInfoDiv = document.getElementById('additionalInfo');
+    var additionalText = document.getElementById('additionalText');
+
+    if (selectElement.value === "si") {
+        additionalInfoDiv.style.display = "block";
+        additionalText.value = "proyecto a, plan z...";
+    } else {
+        additionalInfoDiv.style.display = "none";
+        additionalText.value = "";
+    }
+
+    additionalText.addEventListener('input', function clearText() {
+        additionalText.removeEventListener('input', clearText);
+        additionalText.value = "";
+    });
+}
