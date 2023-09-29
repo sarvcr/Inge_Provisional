@@ -4,7 +4,7 @@
     ViewData["Title"] = "Solicitud de Puesto Clave";
 }
 <link rel="stylesheet" href="~/css/form.css">
-<script src="~/js/form.js"></script>
+
 
 <h1>@ViewData["Title"]</h1>
 
@@ -125,15 +125,16 @@
         <div class="card-header">Paso 5</div>
         <div class="card-body">
             <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com">
-            </div>
-            <div class="form-group">
-                <label for="gender">Género:</label>
-                <select class="form-control" id="gender">
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
+                <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la Dependencia a su cargo?</label><br>
+                <select class="form-control" id="impacto">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="no_aplica">No Aplica</option>
                 </select>
+            </div><br>
+            <div class="form-group" id="afecta-objetivo" style="display:none;">
+                <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
+                <textarea class="form-control" id="afecta-objetivo-texto" rows="4" placeholder="Escribe aquí..."></textarea>
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(4)">Atrás</button>
@@ -146,22 +147,42 @@
         <div class="card-header">Paso 6</div>
         <div class="card-body">
             <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com">
-            </div>
-            <div class="form-group">
-                <label for="gender">Género:</label>
-                <select class="form-control" id="gender">
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
+                <label for="cantidad-personas">Indicar cantidad de personas capaces de desempeñar las funciones del puesto sin contar a la que lo está haciendo actualmente:</label><br>
+                <select class="form-control" id="cantidad-personas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="mas-de-3">Más de 3</option>
                 </select>
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(5)">Atrás</button>
-                <button class="btn btn-success pull-right" onclick="clearFields()">Enviar</button>
+                <button class="btn btn-primary pull-right" onclick="nextStep(7)">Siguiente</button>
             </div>
         </div>
     </div>
+    <!-- Paso 7 -->
+    <div class="form-step card" id="step7" style="display:none;">
+        <div class="card-header">Paso 7</div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un valor superior a los 10 millones de colones?</label><br>
+                <select class="form-control" id="gestiona-activos">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div><br>
+            <div class="form-group" id="valor-activos" style="display:none;">
+                <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
+                <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-primary pull-left" onclick="prevStep(6)">Atrás</button>
+                <button class="btn btn-success pull-right" onclick="">Enviar</button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Indicador de Progreso -->
     <div class="progress-indicator text-center">
@@ -171,6 +192,7 @@
         <div class="circle inactive-circle" data-step="4" onclick="goToStep(4)"></div>
         <div class="circle inactive-circle" data-step="5" onclick="goToStep(5)"></div>
         <div class="circle inactive-circle" data-step="6" onclick="goToStep(6)"></div>
+        <div class="circle inactive-circle" data-step="7" onclick="goToStep(7)"></div>
         <!-- ... Repite para los demás pasos ... -->
     </div>
 
@@ -178,5 +200,5 @@
 </div>
 
 
-
+<script src="~/js/form.js"></script>
 

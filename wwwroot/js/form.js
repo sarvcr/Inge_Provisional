@@ -1,6 +1,6 @@
 function nextStep(step) {
     // Si es el último paso, limpiar campos
-    if (step > 6) {
+    if (step > 7) {
         clearFields();
         return;
     }
@@ -12,7 +12,7 @@ function nextStep(step) {
     // Actualiza el indicador de progreso
     updateProgress(step);
     // Cambia el texto del botón en el último paso
-    if (step === 6) {
+    if (step === 7) {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
@@ -42,7 +42,7 @@ function goToStep(step) {
     // Actualiza el indicador de progreso
     updateProgress(step);
     // Cambia el texto del botón en el último paso
-    if (step === 3) { // Ajusta este número si tienes más pasos
+    if (step === 7) { // Ajusta este número si tienes más pasos
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
@@ -61,7 +61,8 @@ function clearFields() {
             el.selectedIndex = 0;
         }
     });
-}
+}   
+
 
 
 //PRIMERA PARTE DEL FORMULARIO
@@ -87,3 +88,33 @@ function validarYContinuar() {
     // Si hay un error, se muestra un mensaje
     nextStep(2);
 }
+
+// Función para mostrar u ocultar el campo de texto según la selección del paso #5
+function toggleAfectaObjetivo() {
+    var impactoSelect = document.getElementById("impacto");
+    var afectaObjetivoDiv = document.getElementById("afecta-objetivo");
+
+    if (impactoSelect.value === "si") {
+        afectaObjetivoDiv.style.display = "block";
+    } else {
+        afectaObjetivoDiv.style.display = "none";
+    }
+}
+var impactoSelect = document.getElementById("impacto");
+impactoSelect.addEventListener("change", toggleAfectaObjetivo);
+toggleAfectaObjetivo();
+
+// Función para mostrar u ocultar el campo de valor de activos según la selección del paso #7
+function toggleValorActivos() {
+    var gestionaActivosSelect = document.getElementById("gestiona-activos");
+    var valorActivosDiv = document.getElementById("valor-activos");
+
+    if (gestionaActivosSelect.value === "si") {
+        valorActivosDiv.style.display = "block";
+    } else {
+        valorActivosDiv.style.display = "none";
+    }
+}
+var gestionaActivosSelect = document.getElementById("gestiona-activos");
+gestionaActivosSelect.addEventListener("change", toggleValorActivos);
+toggleValorActivos();
