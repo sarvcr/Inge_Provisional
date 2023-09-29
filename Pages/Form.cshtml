@@ -4,7 +4,7 @@
     ViewData["Title"] = "Solicitud de Puesto Clave";
 }
 <link rel="stylesheet" href="~/css/form.css">
-<script src="~/js/form.js"></script>
+
 
 <h1>@ViewData["Title"]</h1>
 
@@ -56,8 +56,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
         <div class="card-header">Requisitos del Puesto</div>
@@ -87,7 +85,7 @@
     <div class="card-body">
             <div class="form-group">
                 <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la Dependencia a su cargo?</label><br>
-                <select  id="impacto">
+                <select class="form-control"  id="impacto">
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                     <option value="no_aplica">No Aplica</option>
@@ -96,10 +94,10 @@
             <div class="form-group" id="afecta-objetivo" style="display:none;">
                 <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
                 <textarea class="form-control" id="afecta-objetivo-texto" rows="4" placeholder="Escribe aquí..."></textarea>
-            </div>
+            </div> <br>
             <div class="form-group">
                 <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un valor superior a los 10 millones de colones?</label><br>
-                <select  id="gestiona-activos">
+                <select class ="form-control" id="gestiona-activos">
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                 </select>
@@ -107,13 +105,13 @@
             <div class="form-group" id="valor-activos" style="display:none;">
                 <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
                 <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
-            </div>
+            </div><br>
         <div class="form-group">
             <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
-            <select id="responsibility" onchange="toggleTextBox()"> 
-                <option value="no">No</option>
+                <select class="form-control"  id="responsibility" onchange="toggleTextBox()">
+                    <option value="no">No</option>
                 <option value="si">Sí</option>
-            </select>
+                </select>
         </div>
         <div id="additionalInfo" style="display:none;">
             <textarea class="form-control" id="additionalText"></textarea>
@@ -124,55 +122,6 @@
         </div>
     </div>
 </div>
-    <script>
-        function toggleTextBox() {
-        var selectElement = document.getElementById('responsibility');
-        var additionalInfoDiv = document.getElementById('additionalInfo');
-        var additionalText = document.getElementById('additionalText');
-
-        if (selectElement.value === "si") {
-        additionalInfoDiv.style.display = "block";
-        additionalText.value = "proyecto a, plan z...";
-        } else {
-        additionalInfoDiv.style.display = "none";
-        additionalText.value = "";
-        }
-
-        additionalText.addEventListener('input', function clearText() {
-        additionalText.removeEventListener('input', clearText);
-        additionalText.value = "";
-        });
-        }
-        function toggleAfectaObjetivo() {
-            var impactoSelect = document.getElementById("impacto");
-            var afectaObjetivoDiv = document.getElementById("afecta-objetivo");
-
-            if (impactoSelect.value === "si") {
-                afectaObjetivoDiv.style.display = "block";
-            } else {
-                afectaObjetivoDiv.style.display = "none";
-            }
-        }
-        var impactoSelect = document.getElementById("impacto");
-        impactoSelect.addEventListener("change", toggleAfectaObjetivo);
-        toggleAfectaObjetivo();
-
-        // Función para mostrar u ocultar el campo de valor de activos según la selección del paso #7
-        function toggleValorActivos() {
-            var gestionaActivosSelect = document.getElementById("gestiona-activos");
-            var valorActivosDiv = document.getElementById("valor-activos");
-
-            if (gestionaActivosSelect.value === "si") {
-                valorActivosDiv.style.display = "block";
-            } else {
-                valorActivosDiv.style.display = "none";
-            }
-        }
-        var gestionaActivosSelect = document.getElementById("gestiona-activos");
-        gestionaActivosSelect.addEventListener("change", toggleValorActivos);
-        toggleValorActivos();
-    </script>
-   
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
         <div class="card-header">Información del Puesto</div>
@@ -669,7 +618,7 @@
         <div class="circle inactive-circle" data-step="6" onclick="goToStep(6)"></div>
         <!-- ... Repite para los demás pasos ... -->
     </div>
-
+    <script src="~/js/form.js"></script>
 
 </div>
 
