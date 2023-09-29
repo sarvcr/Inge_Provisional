@@ -4,7 +4,7 @@
     ViewData["Title"] = "Solicitud de Puesto Clave";
 }
 <link rel="stylesheet" href="~/css/form.css">
-<script src="~/js/form.js"></script>
+
 
 <h1>@ViewData["Title"]</h1>
 
@@ -26,7 +26,16 @@
                         onclick="buscarPorNumeroDePlaza()">Buscar</button>
                 </div>
             </div>
-
+            <!-- Nombre de Plaza -->
+            <div class="form-group d-flex align-items-center">
+                <label for="plazaNumber" class="col-md-2">Nombre de Plaza:</label>
+                <div class="col-md-4">
+                    <input type="number" class="form-control" id="plazaNombre" placeholder="Ingresa el nombre de la plaza" maxlength="5">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-secondary" style="margin-left: 1rem;" onclick="buscarPornombredePlaza()">Buscar</button>
+                </div>
+            </div>
 
             <hr> <!-- Línea horizontal -->
             <!-- Dependencia -->
@@ -58,8 +67,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
         <div class="card-header">Requisitos del Puesto</div>
@@ -90,9 +97,14 @@
         <div class="card-header">Impacto del Puesto</div>
         <div class="card-body">
             <div class="form-group">
+<<<<<<< HEAD
                 <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la
                     Dependencia a su cargo?</label><br>
                 <select id="impacto">
+=======
+                <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la Dependencia a su cargo?</label><br>
+                <select class="form-control"  id="impacto">
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                     <option value="no_aplica">No Aplica</option>
@@ -100,6 +112,7 @@
             </div><br>
             <div class="form-group" id="afecta-objetivo" style="display:none;">
                 <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
+<<<<<<< HEAD
                 <textarea class="form-control" id="afecta-objetivo-texto" rows="4"
                     placeholder="Escribe aquí..."></textarea>
             </div>
@@ -107,6 +120,13 @@
                 <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con
                     un valor superior a los 10 millones de colones?</label><br>
                 <select id="gestiona-activos">
+=======
+                <textarea class="form-control" id="afecta-objetivo-texto" rows="4" placeholder="Escribe aquí..."></textarea>
+            </div> <br>
+            <div class="form-group">
+                <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un valor superior a los 10 millones de colones?</label><br>
+                <select class ="form-control" id="gestiona-activos">
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                 </select>
@@ -114,6 +134,7 @@
             <div class="form-group" id="valor-activos" style="display:none;">
                 <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
                 <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
+<<<<<<< HEAD
             </div>
             <div class="form-group">
                 <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
@@ -180,6 +201,26 @@
         toggleValorActivos();
     </script>
 
+=======
+            </div><br>
+        <div class="form-group">
+            <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+                <select class="form-control"  id="responsibility" onchange="toggleTextBox()">
+                    <option value="no">No</option>
+                <option value="si">Sí</option>
+                </select>
+        </div>
+        <div id="additionalInfo" style="display:none;">
+            <textarea class="form-control" id="additionalText"></textarea>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
+            <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
+        </div>
+    </div>
+</div>
+    
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
         <div class="card-header">Información del Puesto</div>
@@ -682,6 +723,13 @@
         <div class="circle inactive-circle" data-step="6" onclick="goToStep(6)"></div>
         <!-- ... Repite para los demás pasos ... -->
     </div>
-
+    <script src="~/js/form.js"></script>
 
 </div>
+<<<<<<< HEAD
+=======
+
+
+<script src="~/js/form.js"></script>
+
+>>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
