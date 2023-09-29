@@ -104,3 +104,31 @@ function validarYContinuar() {
     // Si hay un error, se muestra un mensaje
     nextStep(2);
 }
+function toggleAfectaObjetivo() {
+    var impactoSelect = document.getElementById("impacto");
+    var afectaObjetivoDiv = document.getElementById("afecta-objetivo");
+
+    if (impactoSelect.value === "si") {
+        afectaObjetivoDiv.style.display = "block";
+    } else {
+        afectaObjetivoDiv.style.display = "none";
+    }
+}
+var impactoSelect = document.getElementById("impacto");
+impactoSelect.addEventListener("change", toggleAfectaObjetivo);
+toggleAfectaObjetivo();
+
+// Función para mostrar u ocultar el campo de valor de activos según la selección del paso #7
+function toggleValorActivos() {
+    var gestionaActivosSelect = document.getElementById("gestiona-activos");
+    var valorActivosDiv = document.getElementById("valor-activos");
+
+    if (gestionaActivosSelect.value === "si") {
+        valorActivosDiv.style.display = "block";
+    } else {
+        valorActivosDiv.style.display = "none";
+    }
+}
+var gestionaActivosSelect = document.getElementById("gestiona-activos");
+gestionaActivosSelect.addEventListener("change", toggleValorActivos);
+toggleValorActivos();
