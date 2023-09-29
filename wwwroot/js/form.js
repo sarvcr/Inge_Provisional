@@ -132,8 +132,24 @@ function toggleValorActivos() {
 var gestionaActivosSelect = document.getElementById("gestiona-activos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
-<<<<<<< HEAD
+function toggleTextBox() {
+    var selectElement = document.getElementById('responsibility');
+    var additionalInfoDiv = document.getElementById('additionalInfo');
+    var additionalText = document.getElementById('additionalText');
 
+    if (selectElement.value === "si") {
+        additionalInfoDiv.style.display = "block";
+        additionalText.value = "proyecto a, plan z...";
+    } else {
+        additionalInfoDiv.style.display = "none";
+        additionalText.value = "";
+    }
+
+    additionalText.addEventListener('input', function clearText() {
+        additionalText.removeEventListener('input', clearText);
+        additionalText.value = "";
+    });
+}
 // Función para asignar la puntuación del paso 6 y asegurarse de que solo un botón por fila esté seleccionado.
 function assignScore(variable, score) {
     // Obtener todos los botones de la fila actual
@@ -153,23 +169,3 @@ function assignScore(variable, score) {
 
 
 // Estilo adicional para el botón seleccionado (puedes ajustarlo según tus necesidades)
-=======
-function toggleTextBox() {
-    var selectElement = document.getElementById('responsibility');
-    var additionalInfoDiv = document.getElementById('additionalInfo');
-    var additionalText = document.getElementById('additionalText');
-
-    if (selectElement.value === "si") {
-        additionalInfoDiv.style.display = "block";
-        additionalText.value = "proyecto a, plan z...";
-    } else {
-        additionalInfoDiv.style.display = "none";
-        additionalText.value = "";
-    }
-
-    additionalText.addEventListener('input', function clearText() {
-        additionalText.removeEventListener('input', clearText);
-        additionalText.value = "";
-    });
-}
->>>>>>> a8a280756a0aa8ced97e66f866efc41e8b5b1268
