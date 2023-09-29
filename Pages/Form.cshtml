@@ -60,7 +60,7 @@
 
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
-        <div class="card-header">Paso 2</div>
+        <div class="card-header">Requisitos del Puesto</div>
         <div class="card-body">
             <div class="form-group">
                 <label for="email">Correo Electrónico:</label>
@@ -77,12 +77,13 @@
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
             </div>
+            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary" style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">Manual de Puesto</a>
         </div>
     </div>
 
     <!-- Paso 3 -->
     <div class="form-step card" id="step3" style="display:none;">
-        <div class="card-header">Paso 3</div>
+        <div class="card-header">Impacto del Puesto</div>
         <div class="card-body">
             <div class="form-group">
                 <label>Intereses:</label><br>
@@ -93,12 +94,44 @@
                 <input type="checkbox" id="interest3" name="interest" value="marketing">
                 <label for="interest3"> Marketing</label><br>
             </div>
+            <div class="form-group">
+                <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+                <select  id="responsibility" onchange="toggleTextBox()">
+                    
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+            </div>
+            <div   id="additionalInfo" style="display:none;">
+               
+                <textarea class="form-control" id="additionalText"></textarea>
+            </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
             </div>
         </div>
     </div>
+    <script>
+        function toggleTextBox() {
+            var selectElement = document.getElementById('responsibility');
+            var additionalInfoDiv = document.getElementById('additionalInfo');
+            var additionalText = document.getElementById('additionalText');
+
+            if (selectElement.value === "si") {
+                additionalInfoDiv.style.display = "block";
+                additionalText.value = "proyecto a, plan z...";
+            } else {
+                additionalInfoDiv.style.display = "none";
+                additionalText.value = "";
+            }
+
+            additionalText.addEventListener('input', function clearText() {
+                additionalText.removeEventListener('input', clearText);
+                additionalText.value = "";
+            });
+        }
+        </script>
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
         <div class="card-header">Paso 4</div>
