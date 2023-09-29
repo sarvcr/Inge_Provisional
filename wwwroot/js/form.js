@@ -133,6 +133,20 @@ var gestionaActivosSelect = document.getElementById("gestiona-activos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
 
+
+    if (selectElement.value === "si") {
+        additionalInfoDiv.style.display = "block";
+        additionalText.value = "proyecto a, plan z...";
+    } else {
+        additionalInfoDiv.style.display = "none";
+        additionalText.value = "";
+    }
+
+    additionalText.addEventListener('input', function clearText() {
+        additionalText.removeEventListener('input', clearText);
+        additionalText.value = "";
+    });
+}
 // Función para asignar la puntuación del paso 6 y asegurarse de que solo un botón por fila esté seleccionado.
 function assignScore(variable, score) {
     // Obtener todos los botones de la fila actual
