@@ -171,14 +171,15 @@ function assignScore(variable, score) {
 
 
 // Estilo adicional para el botón seleccionado (puedes ajustarlo según tus necesidades)
-function toggleTextBox() {
-    var selectElement = document.getElementById('responsibility');
-    var additionalInfoDiv = document.getElementById('additionalInfo');
-    var additionalText = document.getElementById('additionalText');
+function toggleTextBox(selectId, divId, inputId, mensaje) {
+    var selectElement = document.getElementById(selectId);
+    var additionalInfoDiv = document.getElementById(divId);
+    var additionalText = document.getElementById(inputId);
+    var message = mensaje
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
-        additionalText.value = "proyecto a, plan z...";
+        additionalText.value = message;
     } else {
         additionalInfoDiv.style.display = "none";
         additionalText.value = "";

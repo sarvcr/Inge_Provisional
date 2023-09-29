@@ -26,16 +26,7 @@
                         onclick="buscarPorNumeroDePlaza()">Buscar</button>
                 </div>
             </div>
-            <!-- Nombre de Plaza -->
-            <div class="form-group d-flex align-items-center">
-                <label for="plazaNumber" class="col-md-2">Nombre de Plaza:</label>
-                <div class="col-md-4">
-                    <input type="number" class="form-control" id="plazaNombre" placeholder="Ingresa el nombre de la plaza" maxlength="5">
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-secondary" style="margin-left: 1rem;" onclick="buscarPornombredePlaza()">Buscar</button>
-                </div>
-            </div>
+            
 
             <hr> <!-- Línea horizontal -->
             <!-- Dependencia -->
@@ -131,7 +122,7 @@
            
         <div class="form-group">
             <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
-                <select class="form-control"  id="responsibility" onchange="toggleTextBox()">
+                <select class="form-control" id="responsibility" onchange="toggleTextBox('responsibility','additionalInfo', 'additionalText', 'proyecto a, plan z...' )">
                     <option value="si">Sí</option>
                     <option value="no">No</option>
                 </select>
@@ -139,6 +130,33 @@
         <div id="additionalInfo" style="display:none;">
             <textarea class="form-control" id="additionalText"></textarea>
         </div>
+
+        <!---David->      
+
+        <br>
+
+        <div id="additionalInfoEjecutar" style="display:none;">
+            <textarea class="form-control" id="additionalTextEjecutar"></textarea>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="gestion">El puesto tiene bajo su responsabilidad gestionar planes o proyectos:</label>
+            <select id="gestion" onchange="toggleTextBox('gestion','additionalInfoGestionar','additionalTextGestionar','proyecto a, plan z...')">
+                <!-- Call toggleTextBox function here -->
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div id="additionalInfoGestionar" style="display:none;">
+            <textarea class="form-control" id="additionalTextGestionar"></textarea>
+        </div>
+
+
         <div class="btn-container">
             <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
             <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
@@ -161,7 +179,21 @@
                     <option value="mas-de-3">Más de 3</option>
                 </select>
             </div>
-            
+        <div class="form-group">
+            <label for="existeManual">Los manuales de procedimiento son se fácil acceso:</label>
+            <select id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro . . .')">
+                <!-- Call toggleTextBox function here -->
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div id="additionalInfoManual" style="display:none;">
+            <label>Indicar canal de uso para la obtención de este manual</label>
+            <textarea class="form-control" id="additionalTextManual"></textarea>
+        </div>
             
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(3)">Atrás</button>
