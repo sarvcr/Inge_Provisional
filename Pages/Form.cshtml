@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model FormModel
 @{
     ViewData["Title"] = "Solicitud de Puesto Clave";
@@ -127,15 +127,15 @@
                 <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
                 <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
 
-            </div>
+            </div><br>
            
         <div class="form-group">
             <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
                 <select class="form-control"  id="responsibility" onchange="toggleTextBox()">
+                    <option value="si">Sí</option>
                     <option value="no">No</option>
-                <option value="si">Sí</option>
                 </select>
-        </div>
+            </div><br>
         <div id="additionalInfo" style="display:none;">
             <textarea class="form-control" id="additionalText"></textarea>
         </div>
@@ -153,7 +153,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="cantidad-personas">Indicar cantidad de personas capaces de desempeñar las funciones del
-                    puesto sin contar a la que lo está haciendo actualmente:</label><br>
+                puesto (sin contar al encargo actual):</label><br>
                 <select class="form-control" id="cantidad-personas">
                     <option value="1">1</option>
                     <option value="2">2</option>
