@@ -123,27 +123,18 @@
         <div class="form-group">
             <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
                 <select class="form-control" id="responsibility" onchange="toggleTextBox('responsibility','additionalInfo', 'additionalText', 'proyecto a, plan z...' )">
-                    <option value="si">Sí</option>
                     <option value="no">No</option>
+                    <option value="si">Sí</option>
                 </select>
             </div><br>
         <div id="additionalInfo" style="display:none;">
             <textarea class="form-control" id="additionalText"></textarea>
         </div>
 
-        <!---David->      
-
-        <br>
-
-        <div id="additionalInfoEjecutar" style="display:none;">
-            <textarea class="form-control" id="additionalTextEjecutar"></textarea>
-        </div>
-
-        <br>
-
+        <!---David-->      
         <div class="form-group">
             <label for="gestion">El puesto tiene bajo su responsabilidad gestionar planes o proyectos:</label>
-            <select id="gestion" onchange="toggleTextBox('gestion','additionalInfoGestionar','additionalTextGestionar','proyecto a, plan z...')">
+            <select class="form-control" id="gestion" onchange="toggleTextBox('gestion','additionalInfoGestionar','additionalTextGestionar','proyecto a, plan z...')">
                 <!-- Call toggleTextBox function here -->
                 <option value="no">No</option>
                 <option value="si">Sí</option>
@@ -181,7 +172,7 @@
             </div>
         <div class="form-group">
             <label for="existeManual">Los manuales de procedimiento son se fácil acceso:</label>
-            <select id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro . . .')">
+                <select class="form-control" id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro . . .')">
                 <!-- Call toggleTextBox function here -->
                 <option value="no">No</option>
                 <option value="si">Sí</option>
