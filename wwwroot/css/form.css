@@ -1,4 +1,13 @@
-﻿.btn-container {
+﻿.form-page2 {
+    margin-bottom: 10px;
+}
+
+.form-page {
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.btn-container {
     margin-top: 20px;
 }
 

@@ -192,3 +192,19 @@ function toggleTextBox(selectId, divId, inputId, mensaje) {
 }
 
 
+function toggleForm() {
+    var formElements = document.querySelectorAll('.form-page2 input, .form-page2 select');
+    var toggleButton = document.getElementById('toggleButton');
+
+    if (toggleButton.innerText === 'Habilitar') {
+        toggleButton.innerText = 'Deshabilitar';
+        formElements.forEach(function (element) {
+            element.disabled = false;
+        });
+    } else {
+        toggleButton.innerText = 'Habilitar';
+        formElements.forEach(function (element) {
+            element.disabled = true;
+        });
+    }
+}

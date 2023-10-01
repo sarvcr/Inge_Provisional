@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Solicitud de Puesto Clave";
 }
-<link rel="stylesheet" href="~/css/form.css">
+
 
 
 <h1>@ViewData["Title"]</h1>
@@ -61,28 +61,46 @@
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
         <div class="card-header">Requisitos del Puesto</div>
+        <button id="toggleButton" class="btn btn-primary" onclick="toggleForm()">Desabilitar</button>
         <div class="card-body">
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="email" placeholder="ejemplo@dominio.com">
+           
+            <div class="form-group form-page2">
+                <label for="experience">Experiencia Requerida en años:</label>
+                <input type="text" class="form-page"  id="experience">
             </div>
-            <div class="form-group">
-                <label for="gender">Género:</label>
-                <select class="form-control" id="gender">
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
+            <div class="form-group form-page2">
+                <label for="education">Nivel de escolaridad requerido:</label>
+                <select class="form-page"  id="education">
+                    <option value="escuela">Escuela</option>
+                    <option value="noveno">Noveno año</option>
+                    <option value="bachillerato">Bachillerato</option>
+                    <option value="universitario">Título universitario</option>
                 </select>
+            </div>
+            <div class="form-group form-page2" >
+                <label for="technical-training">Horas de Formación Técnica:</label>
+                <input type="text" class="form-page"  id="technical-training">
+            </div>
+            <div class="form-group form-page2" >
+                <label for="job-training">Horas de formación para el puesto:</label>
+                <input type="text" class="form-page"  id="job-training">
+            </div>
+            <div class="form-group form-page2" >
+                <label for="supervision">Tiempo de supervisión de Personal:</label>
+                <input type="text" class="form-page"  id="supervision">
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
             </div>
-            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary"
-                style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">Manual de
-                Puesto</a>
+            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary"
+               style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">
+                Manual de
+                Puesto
+            </a>
         </div>
     </div>
-
+    
     <!-- Paso 3 -->
     <div class="form-step card" id="step3" style="display:none;">
         <div class="card-header">Impacto del Puesto</div>
@@ -678,6 +696,5 @@
 
 </div>
 
-
+<link rel="stylesheet" href="~/css/form.css">
 <script src="~/js/form.js"></script>
-
