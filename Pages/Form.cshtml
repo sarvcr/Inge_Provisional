@@ -61,11 +61,10 @@
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
         <div class="card-header">Requisitos del Puesto</div>
-        <button id="toggleButton" class="btn btn-primary" onclick="toggleFor()">Si no aplica al puesto, deshabilitar</button>
+        <button id="toggleButton" class="btn btn-primary" onclick="toggleForm()">Desabilitar</button>
         <div class="card-body">
            
-            <div class="form-group form-page2 toggleButto2">
-                <button id="toggleButton2" class="btn btn-primary" onclick="toggleForm(2)">no aplica</button>
+            <div class="form-group form-page2">
                 <label for="experience">Experiencia Requerida en años:</label>
                 <input type="text" class="form-page"  id="experience">
             </div>
@@ -98,11 +97,7 @@
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
             </div>
-            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary"
-               style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">
-                Manual de
-                Puesto
-            </a>
+            
         </div>
     </div>
     
