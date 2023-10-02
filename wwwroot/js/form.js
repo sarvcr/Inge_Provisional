@@ -25,7 +25,7 @@ function toggleTextBox() {
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
-        additionalText.value = "proyecto a, plan z...";
+    
     } else {
         additionalInfoDiv.style.display = "none";
         additionalText.value = "";
@@ -141,7 +141,7 @@ function toggleTextBox() {
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
-        additionalText.value = "proyecto a, plan z...";
+        
     } else {
         additionalInfoDiv.style.display = "none";
         additionalText.value = "";
