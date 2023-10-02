@@ -192,18 +192,37 @@ function toggleTextBox(selectId, divId, inputId, mensaje) {
 }
 
 
-function toggleForm() {
-    var formElements = document.querySelectorAll('.form-page2 input, .form-page2 select');
+function toggleFor() {
+    var formElements = document.querySelectorAll('.form-page2 input, .form-page2 select , .form-page2 button' );
     var toggleButton = document.getElementById('toggleButton');
 
-    if (toggleButton.innerText === 'Habilitar') {
-        toggleButton.innerText = 'Deshabilitar';
+    if (toggleButton.innerText === 'Si aplica el puesto, Habilitar') {
+        toggleButton.innerText = 'Si no aplica el puesto, Deshabilitar';
         formElements.forEach(function (element) {
             element.disabled = false;
         });
     } else {
-        toggleButton.innerText = 'Habilitar';
+        toggleButton.innerText = 'Si aplica el puesto, Habilitar';
         formElements.forEach(function (element) {
+            element.disabled = true;
+        });
+    }
+}
+function toggleForm(buttonNumber) {
+    var formGroup = document.querySelector('.toggleButto' + buttonNumber);
+    var toggleButton = document.getElementById('toggleButton' + buttonNumber);
+    var inputElements = formGroup.querySelectorAll('input, select');
+
+    if (formGroup.disabled) {
+        formGroup.disabled = false;
+        toggleButton.textContent = 'no aplica';
+        inputElements.forEach(function (element) {
+            element.disabled = false;
+        });
+    } else {
+        formGroup.disabled = true;
+        toggleButton.textContent = 'aplica';
+        inputElements.forEach(function (element) {
             element.disabled = true;
         });
     }
