@@ -212,3 +212,7 @@ function toggleForm(buttonNumber) {
         
     }
 }
+.form-page2 table td {
+  
+    margin-left: 10px;
+}
