@@ -10,7 +10,7 @@ function updateHeader() {
 }
 
 function nextStep(step) {
-    // Si es el �ltimo paso, limpiar campos
+    // Si es el  ltimo paso, limpiar campos
     if (step > 6) {
         clearFields();
         return;
@@ -38,7 +38,7 @@ function toggleTextBox() {
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
-    
+        additionalText.value = "proyecto a, plan z...";
     } else {
         additionalInfoDiv.style.display = "none";
         additionalText.value = "";
@@ -71,8 +71,8 @@ function goToStep(step) {
     document.getElementById('step' + step).style.display = 'block';
     // Actualiza el indicador de progreso
     updateProgress(step);
-    // Cambia el texto del bot�n en el �ltimo paso
-    if (step === 3) { // Ajusta este n�mero si tienes m�s pasos
+    // Cambia el texto del bot n en el  ltimo paso
+    if (step === 3) { // Ajusta este n mero si tienes m s pasos
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Enviar';
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
@@ -96,7 +96,7 @@ function clearFields() {
 
 //PRIMERA PARTE DEL FORMULARIO
 function buscarPorNumeroDePlaza() {
-    // Aqu� se realizar� la solicitud AJAX para buscar por n�mero de plaza
+    // Aqu  se realizar  la solicitud AJAX para buscar por n mero de plaza
     // Si la respuesta es OK, se autocompletan los campos
     // Si hay un error, se muestra un mensaje
 
@@ -106,8 +106,8 @@ function buscarPorNumeroDePlaza() {
 }
 
 function cargarTrabajadoresPorCargo() {
-    // Aqu� se realizar� la solicitud AJAX para obtener los trabajadores por cargo
-    // Se llenar� el select de encargado con las opciones recibidas
+    // Aqu  se realizar  la solicitud AJAX para obtener los trabajadores por cargo
+    // Se llenar  el select de encargado con las opciones recibidas
 
     // Actualiza el encabezado con el cargo seleccionado
     let cargo = document.getElementById('cargo');
@@ -116,13 +116,13 @@ function cargarTrabajadoresPorCargo() {
 }
 
 function obtenerNumeroDePlaza() {
-    // Aqu� se realizar� la solicitud AJAX para obtener el n�mero de plaza
-    // Se autocompletar� el campo de n�mero de plaza
+    // Aqu  se realizar  la solicitud AJAX para obtener el n mero de plaza
+    // Se autocompletar  el campo de n mero de plaza
 }
 
 function validarYContinuar() {
-    // Aqu� se realizar� la solicitud AJAX para validar la informaci�n
-    // Si la informaci�n es correcta, se pasa al siguiente paso
+    // Aqu  se realizar  la solicitud AJAX para validar la informaci n
+    // Si la informaci n es correcta, se pasa al siguiente paso
     // Si hay un error, se muestra un mensaje
     nextStep(2);
 }
@@ -140,9 +140,9 @@ var impactoSelect = document.getElementById("impacto");
 impactoSelect.addEventListener("change", toggleAfectaObjetivo);
 toggleAfectaObjetivo();
 
-// Funci�n para mostrar u ocultar el campo de valor de activos seg�n la selecci�n del paso #7
+
 function toggleValorActivos() {
-    var gestionaActivosSelect = document.getElementById("gestiona-activos");
+    var gestionaActivosSelect = document.getElementById("gestionaActivos");
     var valorActivosDiv = document.getElementById("valor-activos");
 
     if (gestionaActivosSelect.value === "si") {
@@ -151,7 +151,7 @@ function toggleValorActivos() {
         valorActivosDiv.style.display = "none";
     }
 }
-var gestionaActivosSelect = document.getElementById("gestiona-activos");
+var gestionaActivosSelect = document.getElementById("gestionaActivos");
 gestionaActivosSelect.addEventListener("change", toggleValorActivos);
 toggleValorActivos();
 
@@ -163,7 +163,7 @@ function toggleTextBox() {
 
     if (selectElement.value === "si") {
         additionalInfoDiv.style.display = "block";
-        
+        additionalText.value = "proyecto a, plan z...";
     } else {
         additionalInfoDiv.style.display = "none";
         additionalText.value = "";
@@ -178,9 +178,9 @@ function toggleTextBox() {
 function assignScore(variable, score) {
     // Obtener todos los botones de la fila actual
     var rowButtons = document.querySelectorAll(`button[onclick^="assignScore('${variable}',"]`);
-    
+
     // Desseleccionar todos los botones de la fila
-    rowButtons.forEach(function(btn) {
+    rowButtons.forEach(function (btn) {
         btn.classList.remove('btn-selected');
     });
 
@@ -214,9 +214,71 @@ function toggleTextBox(selectId, divId, inputId, mensaje) {
 }
 
 
-function toggleForm(formNumber) {
-    var toggleButton = document.getElementById('togglecheck' + formNumber);
-    var toggleDiv = document.querySelector('.togglechecks' + formNumber);
+function toggleFor() {
+    var formElements = document.querySelectorAll('.form-page2 input, .form-page2 select , .form-page2 button');
+    var toggleButton = document.getElementById('toggleButton');
 
-    toggleDiv.disabled = !toggleButton.checked;
+    if (toggleButton.innerText === 'Si aplica el puesto, Habilitar') {
+        toggleButton.innerText = 'Si no aplica el puesto, Deshabilitar';
+        formElements.forEach(function (element) {
+            element.disabled = false;
+        });
+    } else {
+        toggleButton.innerText = 'Si aplica el puesto, Habilitar';
+        formElements.forEach(function (element) {
+            element.disabled = true;
+        });
+    }
+}
+function toggleForm(buttonNumber) {
+    var formGroup = document.querySelector('.toggleButto' + buttonNumber);
+    var toggleButton = document.getElementById('toggleButton' + buttonNumber);
+    var inputElements = formGroup.querySelectorAll('input, select');
+
+    if (formGroup.disabled) {
+        formGroup.disabled = false;
+        toggleButton.textContent = 'no aplica';
+        inputElements.forEach(function (element) {
+            element.disabled = false;
+        });
+    } else {
+        formGroup.disabled = true;
+        toggleButton.textContent = 'aplica';
+        inputElements.forEach(function (element) {
+            element.disabled = true;
+        });
+    } 
+}
+function toggleNoAplica(button) {
+    if (button.classList.contains('btn-outline-secondary')) {
+        button.classList.remove('btn-outline-secondary');
+        button.classList.add('btn-secondary');
+    } else {
+        button.classList.remove('btn-secondary');
+        button.classList.add('btn-outline-secondary');
+    }
+}
+function toggleInput(id) {
+    const input = document.getElementById(id);
+    const label = document.querySelector(`label[for="${id}"]`);
+    const checkbox = document.getElementById('noApply' + id.charAt(0).toUpperCase() + id.slice(1));
+
+    if (checkbox.checked) {
+        input.setAttribute('disabled', 'disabled');
+        label.style.opacity = '0.5';
+    } else {
+        input.removeAttribute('disabled');
+        label.style.opacity = '1';
+    }
+}
+function toggleTextBox(selectId, divId, textAreaId, placeholder) {
+    const select = document.getElementById(selectId);
+    const div = document.getElementById(divId);
+    const textArea = document.getElementById(textAreaId);
+    if (select.value === 'si') {
+        div.style.display = 'block';
+        textArea.setAttribute('placeholder', placeholder);
+    } else {
+        div.style.display = 'none';
+    }
 }

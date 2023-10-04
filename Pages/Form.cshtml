@@ -64,151 +64,191 @@
     </div>
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
-        <div class="card-header">Requisitos del Puesto</div>
- <div class="card-body">
-     <table>
-         <tr><td><label for="experience">Aplica</label></td></tr>
-         <tr>
-             <td>
-                  <div class="form-group form-page2 ">
+        <div class="card-header" style= "bottom: 30px" >Requisitos del Puesto</div>
+        <div class="card-body">
 
-                            <input type="checkbox" id="togglecheck1" class="btn btn-primary" onclick="toggleForm(1)" style="display: block;">
-                 </div>
-             </td>
-             <td>
-                        <div class="form-group form-page2 togglechecks1">
-                     <label for="experience">Experiencia Requerida en años:</label>
-                     <input type="text" class="form-page" id="experience">
-                 </div>
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-group form-page2 ">
-                            <input type="checkbox" id="togglecheck2" class="btn btn-primary" onclick="toggleForm(2)" style="display: block;">
-                 </div>
-             </td>
-             <td>
-                        <div class="form-group form-page2 togglechecks2">
-                     <label for="education">Nivel de escolaridad requerido:</label>
-                     <select class="form-page" id="education">
-                         <option value="escuela">Escuela</option>
-                         <option value="noveno">Noveno año</option>
-                         <option value="bachillerato">Bachillerato</option>
-                         <option value="universitario">Título universitario</option>
-                     </select>
-                 </div>
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-group form-page2 ">
-                            <input type="checkbox" id="togglecheck3" class="btn btn-primary" onclick="toggleForm(3)" style="display: block;">
-                  </div>
-             </td>
-             <td>
-                        <div class="form-group form-page2 togglechecks3">
-                     <label for="technical-training">Horas de Formación Técnica:</label>
-                     <input type="text" class="form-page" id="technical-training">
-                 </div>
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-group form-page2 ">
-                            <input type="checkbox" id="togglecheck4" class="btn btn-primary" onclick="toggleForm(4)" style="display: block;">
-                        </div>
-             </td>
-             <td>
-                        <div class="form-group form-page2 togglechecks4">
-                     <label for="job-training">Horas de formación para el puesto:</label>
-                     <input type="text" class="form-page" id="job-training">
-                 </div>
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-group form-page2 ">
-                            <input type="checkbox" id="togglecheck5" class="btn btn-primary" onclick="toggleForm(5)" style="display: block;">
-                        </div>
-             </td>
-             <td>
-                        <div class="form-group form-page2 togglechecks5">
-                     <label for="supervision">Tiempo de supervisión de Personal:</label>
-                     <input type="text" class="form-page" id="supervision">
-                 </div>
-             </td>
-         </tr>
-        </table>
-     </div>
-            <div class="btn-container">
-                <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
-                <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
+            <!-- Experiencia Requerida -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="experience" class="mr-3" style="width: 300px;">Experiencia Requerida:</label>
+                <input type="number" class="form-control mr-2" id="experience" placeholder="Número de años de experiencia">
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyExperience"
+                           onclick="toggleInput('experience')">
+                    <label class="form-check-label" for="noApplyExperience" style="white-space: nowrap;">No Aplica</label>
+                </div>
             </div>
+
+            <!-- Nivel de escolaridad requerido -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="education" class="mr-3" style="width: 300px;">Nivel de Escolaridad Requerido:</label>
+                <select class="form-control mr-2" id="education">
+                    <option value="escuela">Escuela</option>
+                    <option value="noveno">Noveno año</option>
+                    <option value="bachillerato">Bachillerato</option>
+                    <option value="universitario">Título universitario</option>
+                </select>
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyEducation"
+                           onclick="toggleInput('education')">
+                    <label class="form-check-label" for="noApplyEducation" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+
+            <!-- Horas de Formación Técnica -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="technical-training" class="mr-3" style="width: 300px;">Horas de Formación Técnica:</label>
+                <input type="number" class="form-control mr-2" id="technicalTraining"
+                       placeholder="Total de horas de formación técnica">
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyTechnicalTraining"
+                           onclick="toggleInput('technicalTraining')">
+                    <label class="form-check-label" for="noApplyTechnicalTraining" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+
+            <!-- Horas de formación para el puesto -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="job-training" class="mr-3" style="width: 300px;">Horas de Formación para el puesto:</label>
+                <input type="number" class="form-control mr-2" id="jobTraining"
+                       placeholder="Total de horas de formación específica">
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyJobTraining"
+                           onclick="toggleInput('jobTraining')">
+                    <label class="form-check-label" for="noApplyJobTraining" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+
+            <!-- Tiempo de supervisión de Personal -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="supervision" class="mr-3" style="width: 300px;">Tiempo de Supervisión de Personal:</label>
+                <input type="number" class="form-control mr-2" id="supervision"
+                       placeholder="Tiempo en meses o años supervisando personal">
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplySupervision"
+                           onclick="toggleInput('supervision')">
+                    <label class="form-check-label" for="noApplySupervision" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+            <!-- Botones de navegación -->
+                        <div class="btn-container mb-3">
+            <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
+            <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
+            </div>
+            <!-- Boton que descarga el manual de puestos  -->
             <a href="https://www.aya.go.cr/transparenciaInst/_layouts/download.aspx?SourceUrl=https%3a//www.aya.go.cr/transparenciaInst/acceso_informacion/ManualClases/Manual%20de%20Cargos%20Institucional.pdf" class="btn btn-primary"
-               style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">
+               style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white; margin-bottom: 20px;">
                 Manual de
                 Puesto
             </a>
-        
+        </div>
     </div>
     
     <!-- Paso 3 -->
     <div class="form-step card" id="step3" style="display:none;">
         <div class="card-header">Impacto del Puesto</div>
         <div class="card-body">
+
+            <!-- Impacto del Puesto -->
             <div class="form-group">
-
-               
-
-                <label for="impacto">¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la Dependencia a su cargo?</label><br>
-                <select class="form-control"  id="impacto">
-
-                    <option value="si">Sí</option>
-                    <option value="no">No</option>
-                    
-                </select>
-            </div><br>
-            <div class="form-group" id="afecta-objetivo" style="display:none;">
-                <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
-
-                <textarea class="form-control" id="afecta-objetivo-texto" rows="4"
-                    placeholder="Escribe aquí..."></textarea>
+                <label for="impacto">
+                    ¿Las funciones asignadas al puesto en estudio afectan al Objetivo General de la
+                    Dependencia a su cargo?
+                </label>
+                <div class="input-group mt-2">
+                    <select class="form-control mr-2" id="impacto">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyImpacto"
+                               onclick="toggleInput('impacto')">
+                        <label class="form-check-label" for="noApplyImpacto">No Aplica</label>
+                    </div>
+                </div>
             </div>
-           
-            <div class="form-group">
-                <label for="gestiona-activos">¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un valor superior a los 10 millones de colones?</label><br>
-                <select class ="form-control" id="gestiona-activos">
 
-                    <option value="si">Sí</option>
-                    <option value="no">No</option>
-                </select>
-            </div><br>
-            <div class="form-group" id="valor-activos" style="display:none;">
+            <!-- Detalles sobre el impacto -->
+            <div class="form-group mt-4" id="afecta-objetivo" style="display:none;">
+                <label for="afecta-objetivo-texto">Favor indique cómo afecta el cumplimiento del objetivo:</label>
+                <textarea class="form-control mt-2" id="afecta-objetivo-texto" rows="4"
+                          placeholder="Escribe aquí..."></textarea>
+            </div>
+
+            <!-- Gestión de Activos -->
+            <div class="form-group mt-4">
+                <label for="gestiona-activos">
+                    ¿El puesto en estudio tiene bajo su responsabilidad gestionar activos con un
+                    valor superior a los 10 millones de colones?
+                </label>
+                <div class="input-group mt-2">
+                    <select class="form-control mr-2" id="gestionaActivos">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyGestionaActivos"
+                               onclick="toggleInput('gestionaActivos')">
+                        <label class="form-check-label mr-9" for="noApplyGestionaActivos">No Aplica</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Valor de los Activos -->
+            <div class="form-group mt-4" id="valor-activos" style="display:none;">
                 <label for="valor-activos-input">Indicar el valor aproximado de estos activos:</label>
-                <input type="number" class="form-control" id="valor-activos-input" placeholder="Valor en colones">
+                <input type="number" class="form-control mt-2" id="valor-activos-input" placeholder="Valor en colones">
+            </div>
 
-            </div><br>
-           
-        <div class="form-group">
-            <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
-                <select class="form-control" id="responsibility" onchange="toggleTextBox('responsibility','additionalInfo', 'additionalText', 'proyecto a, plan z...' )">
-                    <option value="no">No</option>
-                    <option value="si">Sí</option>
-                </select>
-            </div><br>
-        <div id="additionalInfo" style="display:none;">
-                <textarea class="form-control" id="additionalText" placeholder="Escribe aquí..."></textarea>
-        </div>
+            <!-- Responsabilidad sobre Planes o Proyectos -->
+            <div class="form-group mt-4">
+                <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+                <div class="input-group mt-2">
+                    <select class="form-control mr-2" id="responsibility"
+                            onchange="toggleTextBox('responsibility','additionalInfo', 'additionalText', 'proyecto a, plan z...' )">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyResponsibility"
+                               onclick="toggleInput('responsibility')">
+                        <label class="form-check-label mr-9" for="noApplyResponsibility">No Aplica</label>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Detalles sobre la responsabilidad de Planes o Proyectos -->
+            <div class="form-group mt-4" id="additionalInfo" style="display:none;">
+                <textarea class="form-control" id="additionalText"></textarea>
+            </div>
 
-        <div class="btn-container">
-            <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
-            <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
+            <!-- Responsabilidad de Gestión de Planes o Proyectos -->
+            <div class="form-group mt-4">
+                <label for="gestion">El puesto tiene bajo su responsabilidad gestionar planes o proyectos:</label>
+                <div class="input-group mt-2">
+                    <select class="form-control mr-2" id="gestion"
+                            onchange="toggleTextBox('gestion','additionalInfoGestionar','additionalTextGestionar','proyecto a, plan z...')">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyGestion"
+                               onclick="toggleInput('gestion')">
+                        <label class="form-check-label mr-9" for="noApplyGestion">No Aplica</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalles sobre la responsabilidad de Gestión de Planes o Proyectos -->
+            <div class="form-group mt-4" id="additionalInfoGestionar" style="display:none;">
+                <textarea class="form-control" id="additionalTextGestionar"></textarea>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="btn-container mb-50">
+                <button class="btn btn-primary pull-left" onclick="prevStep(2)">Atrás</button>
+                <button class="btn btn-primary pull-right" onclick="nextStep(4)">Siguiente</button>
+            </div>
         </div>
     </div>
-</div>
-    
 
     <!-- Paso 4 -->
     <div class="form-step card" id="step4" style="display:none;">
@@ -225,12 +265,19 @@
                 </select>
             </div>
         <div class="form-group">
-            <label for="existeManual">Los manuales de procedimiento son se fácil acceso:</label>
-                <select class="form-control" id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro . . .')">
+            <label for="existeManual">Los manuales de procedimiento son de fácil acceso:</label>
+             <div class="input-group mt-2">
+                <select class="form-control" id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro...')">
                 <!-- Call toggleTextBox function here -->
                 <option value="no">No</option>
                 <option value="si">Sí</option>
             </select>
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyExisteManual"
+                           onclick="toggleInput('existeManual')">
+                    <label class="form-check-label" for="noApplyExisteManual">No Aplica</label>
+                </div>
+             </div>
         </div>
 
         <br>
@@ -248,29 +295,65 @@
     </div>
     <!-- Paso 5: Indicar conocimiento -->
     <div class="form-step card" id="step5" style="display:none;">
-        <div class="card-header">Indique el conocimiento necesario en las siguientes áreas:</div>
+        <div class="card-header">Aspectos Técnicos y Tecnológicos:</div>
         <div class="card-body">
 
+            <!-- Sistemas tecnológicos y programas que se utilizan -->
             <div class="form-group">
                 <label for="systems">Sistemas tecnológicos y programas que se utilizan:</label>
-                <textarea class="form-control" id="systems" rows="3"
-                          placeholder="Especifique los sistemas tecnológicos y programas que se utilizan en el puesto."></textarea>
+                <div class="input-group">
+                    <textarea class="form-control" id="systems" rows="3"
+                              placeholder="Especifique los sistemas tecnológicos y programas que se utilizan en el puesto."></textarea>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplySystems"
+                               onclick="toggleInput('systems')">
+                        <label class="form-check-label" for="noApplySystems">No Aplica</label>
+                    </div>
+                </div>
             </div>
+
+            <!-- Manejo de equipo especializado necesario -->
             <div class="form-group">
                 <label for="manejo">Manejo de equipo especializado necesario:</label>
-                <textarea class="form-control" id="manejo" rows="3"
-                          placeholder="Indique el equipo especializado que es necesario manejar para el puesto."></textarea>
+                <div class="input-group">
+                    <textarea class="form-control" id="manejo" rows="3"
+                              placeholder="Indique el equipo especializado que es necesario manejar para el puesto."></textarea>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyManejo" onclick="toggleInput('manejo')">
+                        <label class="form-check-label" for="noApplyManejo">No Aplica</label>
+                    </div>
+                </div>
             </div>
+
+            <!-- Conocimiento conceptual -->
             <div class="form-group">
-                <label for="conocimiento">Conocimiento Conceptual:</label>
-                <textarea class="form-control" id="conocimiento" rows="3"
-                          placeholder="Describa el tipo de conocimiento teórico que se requiere manejar para el puesto."></textarea>
+                <label for="conocimiento">Conocimiento conceptual:</label>
+                <div class="input-group">
+                    <textarea class="form-control" id="conocimiento" rows="3"
+                              placeholder="Describa el tipo de conocimiento teórico que se requiere manejar para el puesto."></textarea>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyConocimiento"
+                               onclick="toggleInput('conocimiento')">
+                        <label class="form-check-label" for="noApplyConocimiento">No Aplica</label>
+                    </div>
+                </div>
             </div>
+
+            <!-- Dinámica institucional para la ejecución de funciones -->
             <div class="form-group">
-                <label for="Dinamica">Dinámica institucional para la ejecucion de funciones :</label>
-                <textarea class="form-control" id="Dinamica" rows="3"
-                          placeholder="Especifique las condiciones especiales que se deben conocer del AyA para desempeñar adecuadamente las funciones del puesto."></textarea>
+                <label for="Dinamica">Dinámica institucional para la ejecución de funciones :</label>
+                <div class="input-group">
+                    <textarea class="form-control" id="Dinamica" rows="3"
+                              placeholder="Especifique las condiciones especiales que se deben conocer del AyA para desempeñar adecuadamente las funciones del puesto."></textarea>
+                    <div class="form-check form-check-inline custom-margin">
+                        <input class="form-check-input" type="checkbox" id="noApplyDinamica"
+                               onclick="toggleInput('Dinamica')">
+                        <label class="form-check-label" for="noApplyDinamica">No Aplica</label>
+                    </div>
+                </div>
             </div>
+
+            <!-- Botones de navegación -->
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(4)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(6)">Siguiente</button>
@@ -280,7 +363,7 @@
 
     <!-- Paso 6 Valor de las principales variables que influyen en la solicitud de un puesto clave-->
     <div class="form-step card" id="step6" style="display:none;">
-        <div class="card-header">Paso 6 - Asignación de Puntuación</div>
+        <div class="card-header">Asignación de Puntuación</div>
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
@@ -482,35 +565,35 @@
                         <td>Presupuesto y/o Activos Institucionales</td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 1)">
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 1)">
                                 De ¢0.00 a
                                 9,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 2)">
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 2)">
                                 De ¢10,000,000.00 a
                                 ¢29,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 3)">
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 3)">
                                 De 30,000,000.00 a
                                 49,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 4)">
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 4)">
                                 De ¢50,000,000.00 a
                                 ¢99,999,999.99.
                             </button>
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Presupuesto y/o Activos Institucionales', 5)">
+                                    onclick="assignScore('Presupuesto y/o Activos Institucionales', 5)">
                                 De ¢100,000,000.00 o
                                 más.
                             </button>
@@ -588,7 +671,7 @@
                         <td>Funcionamiento de Procesos Medulares del AyA</td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 1)">
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 1)">
                                 La ausencia por
                                 más de
                                 cinco días (de la persona que
@@ -599,7 +682,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 2)">
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 2)">
                                 Por cada cinco
                                 días de
                                 ausencia (de la persona que
@@ -611,7 +694,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 3)">
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 3)">
                                 Por cada dos
                                 días de
                                 ausencia (de la persona que
@@ -623,7 +706,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 4)">
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 4)">
                                 Por cada día de
                                 ausencia
                                 (de la persona que ocupa el
@@ -634,7 +717,7 @@
                         </td>
                         <td>
                             <button class="btn btn-light"
-                                onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 5)">
+                                    onclick="assignScore('Funcionamiento de Procesos Medulares del AyA', 5)">
                                 Por cada día de
                                 ausencia
                                 (de la persona que ocupa el
@@ -717,6 +800,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Indicador de Progreso -->
     <div class="progress-indicator text-center">
