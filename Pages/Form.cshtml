@@ -61,83 +61,82 @@
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
         <div class="card-header">Requisitos del Puesto</div>
-        <div class="card-body">
-
-            <div class="form-group form-page2 toggleButto2">
-                <table >
-                    <tr>
-                        <td>
-               <label for="experience">Aplica</label>
-               <input type="checkbox" id="toggleButton2" class="btn btn-primary" onclick="toggleForm(2)" style="display: block;">
-                </td>
-                <td>
-                    <label for="experience">Experiencia Requerida en años:</label>
-                    <input type="text" class="form-page" id="experience">
-                </td>
-                </tr>
-                </table>
-            </div>
-            <div class="form-group form-page2 toggleButto3">
-                <table>
-                    <tr>
-                        <td>
-               
-                            <input type="checkbox" id="toggleButton3" class="btn btn-primary" onclick="toggleForm(3)" style="display: block;">
-                        </td>
-                        <td>
-                <label for="education">Nivel de escolaridad requerido:</label>
-                <select class="form-page" id="education">
-                    <option value="escuela">Escuela</option>
-                    <option value="noveno">Noveno año</option>
-                    <option value="bachillerato">Bachillerato</option>
-                    <option value="universitario">Título universitario</option>
-                </select>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form-group form-page2 toggleButto4">
-                <table>
-                    <tr>
-                        <td>
-               
-                            <input type="checkbox" id="toggleButton4" class="btn btn-primary" onclick="toggleForm(4)" style="display: block;">
-                </td>
-                <td>
-                <label for="technical-training">Horas de Formación Técnica:</label>
-                <input type="text" class="form-page" id="technical-training">
-                </td>
-                </tr>
-                </table>
-            </div>
-            <div class="form-group form-page2 toggleButto5">
-                <table>
-                    <tr>
-                        <td>
-               
-                            <input type="checkbox" id="toggleButton5" class="btn btn-primary" onclick="toggleForm(5)" style="display: block;">
-                </td>
-                <td>
-                <label for="job-training">Horas de formación para el puesto:</label>
-                <input type="text" class="form-page" id="job-training">
-                </td>
-                </tr>
-                </table>
-            </div>
-            <div class="form-group form-page2 toggleButto6">
-                <table>
-                    <tr>
-                        <td>
-               
-                            <input type="checkbox" id="toggleButton6" class="btn btn-primary" onclick="toggleForm(6)" style="display: block;">
-                </td>
-                <td>
-                <label for="supervision">Tiempo de supervisión de Personal:</label>
-                <input type="text" class="form-page" id="supervision">
-                </td>
-                </tr>
-                </table>
-            </div>
+ <div class="card-body">
+     <table>
+         <tr><td><label for="experience">Aplica</label></td></tr>
+         <tr>
+             <td>
+                  <div class="form-group form-page2 ">                
+                       
+                        <input type="checkbox" id="toggleButton2" class="btn btn-primary" onclick="toggleForm(2)" style="display: block;">
+                 </div>
+             </td>
+             <td>
+                 <div class="form-group form-page2 toggleButto2">
+                     <label for="experience">Experiencia Requerida en años:</label>
+                     <input type="text" class="form-page" id="experience">
+                 </div>
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <div class="form-group form-page2 ">
+                     <input type="checkbox" id="toggleButton3" class="btn btn-primary" onclick="toggleForm(3)" style="display: block;">
+                 </div>
+             </td>
+             <td>
+                 <div class="form-group form-page2 toggleButto3">
+                     <label for="education">Nivel de escolaridad requerido:</label>
+                     <select class="form-page" id="education">
+                         <option value="escuela">Escuela</option>
+                         <option value="noveno">Noveno año</option>
+                         <option value="bachillerato">Bachillerato</option>
+                         <option value="universitario">Título universitario</option>
+                     </select>
+                 </div>
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <div class="form-group form-page2 ">
+                     <input type="checkbox" id="toggleButton4" class="btn btn-primary" onclick="toggleForm(4)" style="display: block;">
+                  </div>
+             </td>
+             <td>
+                 <div class="form-group form-page2 toggleButto4">
+                     <label for="technical-training">Horas de Formación Técnica:</label>
+                     <input type="text" class="form-page" id="technical-training">
+                 </div>
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <div class="form-group form-page2 ">
+                     <input type="checkbox" id="toggleButton5" class="btn btn-primary" onclick="toggleForm(5)" style="display: block;">                          
+                 </div>
+             </td>
+             <td>
+                 <div class="form-group form-page2 toggleButto5">
+                     <label for="job-training">Horas de formación para el puesto:</label>
+                     <input type="text" class="form-page" id="job-training">
+                 </div>
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <div class="form-group form-page2 ">
+                     <input type="checkbox" id="toggleButton6" class="btn btn-primary" onclick="toggleForm(6)" style="display: block;">                          
+                 </div>
+             </td>
+             <td>
+                 <div class="form-group form-page2 toggleButto6">
+                     <label for="supervision">Tiempo de supervisión de Personal:</label>
+                     <input type="text" class="form-page" id="supervision">
+                 </div>
+             </td>
+         </tr>
+        </table>
+     </div>
             <div class="btn-container">
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
