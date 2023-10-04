@@ -193,26 +193,9 @@ function toggleTextBox(selectId, divId, inputId, mensaje) {
 
 
 
-function toggleForm(buttonNumber) {
-    var formGroup = document.querySelector('.toggleButto' + buttonNumber);
-    var toggleButton = document.getElementById('toggleButton' + buttonNumber);
-    var inputElements = formGroup.querySelectorAll('input:not([type="checkbox"]), select');
+function toggleForm(formNumber) {
+    var toggleButton = document.getElementById('toggleButton' + formNumber);
+    var toggleDiv = document.querySelector('.toggleButto' + formNumber);
 
-    if (toggleButton.checked) {
-        inputElements.forEach(function (element) {
-            element.disabled = true;
-        });
-        
-       
-    } else {
-        inputElements.forEach(function (element) {
-            element.disabled = false;
-        });
-        
-        
-    }
-}
-.form-page2 table td {
-  
-    margin-left: 10px;
+    toggleDiv.disabled = !toggleButton.checked;
 }
