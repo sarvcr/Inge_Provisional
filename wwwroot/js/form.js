@@ -1,3 +1,14 @@
+function updateHeader() {
+    // Actualiza el número de plaza
+    let plazaNumber = document.getElementById('plazaNumber').value;
+    document.getElementById('selectedPlazaNumber').innerText = plazaNumber ? plazaNumber : '-';
+
+    // Actualiza el cargo
+    let cargo = document.getElementById('cargo');
+    let selectedCargo = cargo.options[cargo.selectedIndex] ? cargo.options[cargo.selectedIndex].text : '-';
+    document.getElementById('selectedCargo').innerText = selectedCargo;
+}
+
 function nextStep(step) {
     // Si es el �ltimo paso, limpiar campos
     if (step > 6) {
@@ -17,6 +28,8 @@ function nextStep(step) {
     } else {
         document.querySelector('#step' + step + ' .btn-success').textContent = 'Siguiente';
     }
+    
+    updateHeader(); // Actualiza el encabezado con el número de plaza y el cargo
 }
 function toggleTextBox() {
     var selectElement = document.getElementById('responsibility');
@@ -86,11 +99,20 @@ function buscarPorNumeroDePlaza() {
     // Aqu� se realizar� la solicitud AJAX para buscar por n�mero de plaza
     // Si la respuesta es OK, se autocompletan los campos
     // Si hay un error, se muestra un mensaje
+
+     // Actualiza el encabezado con el número de plaza seleccionado
+     let plazaNumber = document.getElementById('plazaNumber').value;
+     document.getElementById('selectedPlazaNumber').innerText = plazaNumber;
 }
 
 function cargarTrabajadoresPorCargo() {
     // Aqu� se realizar� la solicitud AJAX para obtener los trabajadores por cargo
     // Se llenar� el select de encargado con las opciones recibidas
+
+    // Actualiza el encabezado con el cargo seleccionado
+    let cargo = document.getElementById('cargo');
+    let selectedCargo = cargo.options[cargo.selectedIndex].text;
+    document.getElementById('selectedCargo').innerText = selectedCargo;
 }
 
 function obtenerNumeroDePlaza() {

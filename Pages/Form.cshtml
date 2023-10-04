@@ -4,9 +4,13 @@
     ViewData["Title"] = "Solicitud de Puesto Clave";
 }
 
-
-
 <h1>@ViewData["Title"]</h1>
+
+<!-- Encabezado fijo del formulario -->
+<div class="fixed-header"> 
+    <span>Número de Plaza: <strong id="selectedPlazaNumber">-</strong></span>
+    <span>Cargo: <strong id="selectedCargo">-</strong></span>
+</div>
 
 <h3>Formulario de solicitud</h3>
 <div class="card">
@@ -141,7 +145,7 @@
                 <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
                 <button class="btn btn-primary pull-right" onclick="nextStep(3)">Siguiente</button>
             </div>
-            <a href="http://intranet-aya/sitios/docs/DocGnrl/Manual de puestos" class="btn btn-primary"
+            <a href="https://www.aya.go.cr/transparenciaInst/_layouts/download.aspx?SourceUrl=https%3a//www.aya.go.cr/transparenciaInst/acceso_informacion/ManualClases/Manual%20de%20Cargos%20Institucional.pdf" class="btn btn-primary"
                style="position: absolute; top: 10px; right: 10px; background-color: blue; color: white;">
                 Manual de
                 Puesto

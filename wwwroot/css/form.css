@@ -1,3 +1,16 @@
+/* Estilos para el fixed-header con el número de plaza y nombre del puesto */
+.fixed-header {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+}
+
 .form-page2 table td {
   
     margin-left: 10px;
