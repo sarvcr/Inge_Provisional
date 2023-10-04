@@ -192,10 +192,9 @@ function toggleTextBox(selectId, divId, inputId, mensaje) {
 }
 
 
-
 function toggleForm(formNumber) {
-    var toggleButton = document.getElementById('toggleButton' + formNumber);
-    var toggleDiv = document.querySelector('.toggleButto' + formNumber);
+    var toggleButton = document.getElementById('togglecheck' + formNumber);
+    var toggleDiv = document.querySelector('.togglechecks' + formNumber);
 
     toggleDiv.disabled = !toggleButton.checked;
 }
