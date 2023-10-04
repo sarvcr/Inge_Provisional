@@ -1,23 +1,46 @@
-﻿.form-page2 {
-    margin-bottom: 10px;
+
+/* Estilos para el fixed-header con el número de plaza y nombre del puesto */
+.fixed-header {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
-.form-page {
-    margin-bottom: 10px;
-    border-radius: 10px;
+.custom-margin {
+    margin-right: 50px;
+    padding-left: 50px;
 }
 
+
+.form-page2 table td {
+  
+    margin-left: 10px;
+}
+.form-page2  {
+    margin-bottom: 10px;
+}
 .btn-container {
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .pull-left {
     float: left;
+    margin-bottom: 20px;
 }
 
 .pull-right {
     float: right;
+    margin-bottom: 20px;
 }
+
+
 
 .circle {
     display: inline-block;
@@ -69,4 +92,12 @@
     box-shadow: 0 0 5px #0056b3, 0 0 0 3px rgba(0, 123, 255, 0.5); /* Dos sombras: una azul oscuro y otra azul claro alrededor */
 }
 
+.btn-no-aplica {
+    width: 100px;
+}
+
+/* Estilo para los campos de texto anchos */
+.wide-textarea {
+    width: 100%; /* Ajusta el ancho según tus preferencias */
+}
 
