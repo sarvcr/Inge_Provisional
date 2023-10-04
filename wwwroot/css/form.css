@@ -1,16 +1,7 @@
-﻿.form-page2 {
-    margin-bottom: 10px;
-    
+.form-page2 table td {
+  
+    margin-left: 10px;
 }
-    .form-page2 .table {
-        border-collapse: separate;
-        border-spacing: 0 30px;
-    }
-.form-page {
-    margin-bottom: 10px;
-
-}
-
 .btn-container {
     margin-top: 20px;
 }
