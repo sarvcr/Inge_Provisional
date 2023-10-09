@@ -64,11 +64,12 @@
     </div>
     <!-- Paso 2 -->
     <div class="form-step card" id="step2" style="display:none;">
-        <div class="card-header" style= "bottom: 30px" >Requisitos del Puesto</div>
+        <div class="card-header" style= "bottom: 30px" >Requisitos del Puesto según el Manual de Puesto: Los requisitos deben estar alineados según lo establecido en el manual de puestos</div>
         <div class="card-body">
 
             <!-- Experiencia Requerida -->
             <div class="form-group d-flex align-items-center mb-3">
+                
                 <label for="experience" class="mr-3" style="width: 300px;">Experiencia Requerida:</label>
                 <input type="number" class="form-control mr-2" id="experience" placeholder="Número de años de experiencia">
                 <div class="form-check form-check-inline custom-margin">
@@ -76,11 +77,12 @@
                            onclick="toggleInput('experience')">
                     <label class="form-check-label" for="noApplyExperience" style="white-space: nowrap;">No Aplica</label>
                 </div>
-            </div>
 
+            </div>
+            <hr>
             <!-- Nivel de escolaridad requerido -->
             <div class="form-group d-flex align-items-center mb-3">
-                <label for="education" class="mr-3" style="width: 300px;">Nivel de Escolaridad Requerido:</label>
+                <label for="education" class="mr-3" style="width: 300px;">Nivel de Escolaridad Requerido Opcion 1:</label>
                 <select class="form-control mr-2" id="education">
                     <option value="escuela">Escuela</option>
                     <option value="noveno">Noveno año</option>
@@ -96,7 +98,7 @@
 
             <!-- Horas de Formación Técnica -->
             <div class="form-group d-flex align-items-center mb-3">
-                <label for="technical-training" class="mr-3" style="width: 300px;">Horas de Formación Técnica:</label>
+                <label for="technical-training" class="mr-3" style="width: 300px;">Horas de Formación Técnica Opcion 1:</label>
                 <input type="number" class="form-control mr-2" id="technicalTraining"
                        placeholder="Total de horas de formación técnica">
                 <div class="form-check form-check-inline custom-margin">
@@ -106,6 +108,34 @@
                 </div>
             </div>
 
+            <!-- Nivel de escolaridad requerido -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="education2" class="mr-3" style="width: 300px;">Nivel de Escolaridad Requerido Opcion 2:</label>
+                <select class="form-control mr-2" id="education">
+                    <option value="escuela">Escuela</option>
+                    <option value="noveno">Noveno año</option>
+                    <option value="bachillerato">Bachillerato</option>
+                    <option value="universitario">Título universitario</option>
+                </select>
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyEducation"
+                           onclick="toggleInput('education2')">
+                    <label class="form-check-label" for="noApplyEducation" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+
+            <!-- Horas de Formación Técnica -->
+            <div class="form-group d-flex align-items-center mb-3">
+                <label for="technical-training" class="mr-3" style="width: 300px;">Horas de Formación Técnica Opcion 2:</label>
+                <input type="number" class="form-control mr-2" id="technicalTraining2"
+                       placeholder="Total de horas de formación técnica">
+                <div class="form-check form-check-inline custom-margin">
+                    <input class="form-check-input" type="checkbox" id="noApplyTechnicalTraining"
+                           onclick="toggleInput('technicalTraining2')">
+                    <label class="form-check-label" for="noApplyTechnicalTraining" style="white-space: nowrap;">No Aplica</label>
+                </div>
+            </div>
+            <hr>
             <!-- Horas de formación para el puesto -->
             <div class="form-group d-flex align-items-center mb-3">
                 <label for="job-training" class="mr-3" style="width: 300px;">Horas de Formación para el puesto:</label>
@@ -129,6 +159,7 @@
                     <label class="form-check-label" for="noApplySupervision" style="white-space: nowrap;">No Aplica</label>
                 </div>
             </div>
+           
             <!-- Botones de navegación -->
                         <div class="btn-container mb-3">
             <button class="btn btn-primary pull-left" onclick="prevStep(1)">Atrás</button>
@@ -200,7 +231,7 @@
 
             <!-- Responsabilidad sobre Planes o Proyectos -->
             <div class="form-group mt-4">
-                <label for="responsibility">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
+                <label for="responsibility">El puesto tiene bajo su responsabilidad planificar, coordinar y supervisar planes o proyectos (rol estratégico):</label>
                 <div class="input-group mt-2">
                     <select class="form-control mr-2" id="responsibility"
                             onchange="toggleTextBox('responsibility','additionalInfo', 'additionalText', 'proyecto a, plan z...' )">
@@ -222,7 +253,7 @@
 
             <!-- Responsabilidad de Gestión de Planes o Proyectos -->
             <div class="form-group mt-4">
-                <label for="gestion">El puesto tiene bajo su responsabilidad gestionar planes o proyectos:</label>
+                <label for="gestion">El puesto tiene bajo su responsabilidad ejecutar planes o proyectos:</label>
                 <div class="input-group mt-2">
                     <select class="form-control mr-2" id="gestion"
                             onchange="toggleTextBox('gestion','additionalInfoGestionar','additionalTextGestionar','proyecto a, plan z...')">
@@ -255,8 +286,8 @@
         <div class="card-header">Información del Puesto</div>
         <div class="card-body">
             <div class="form-group">
-                <label for="cantidad-personas">Indicar cantidad de personas capaces de desempeñar las funciones del
-                puesto (sin contar al encargo actual):</label><br>
+                <label for="cantidad-personas">Indicar cantidad de personas de su área capaces de desempeñar las funciones del
+                puesto (sin contar al encargado actual):</label><br>
                 <select class="form-control" id="cantidad-personas">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -265,7 +296,7 @@
                 </select>
             </div>
         <div class="form-group">
-            <label for="existeManual">Los manuales de procedimiento son de fácil acceso:</label>
+            <label for="existeManual">Los funcionarios indicados en el punto anterior han sido capacitados con los manuales de procedimientos vigentes</label>
              <div class="input-group mt-2">
                 <select class="form-control" id="existeManual" onchange="toggleTextBox('existeManual','additionalInfoManual','additionalTextManual','Link, sitio web, otro...')">
                 <!-- Call toggleTextBox function here -->
@@ -283,7 +314,7 @@
         <br>
 
         <div id="additionalInfoManual" style="display:none;">
-            <label>Indicar canal de uso para la obtención de este manual</label>
+            <label>Observación</label>
             <textarea class="form-control" id="additionalTextManual"></textarea>
         </div>
             
@@ -300,6 +331,7 @@
 
             <!-- Sistemas tecnológicos y programas que se utilizan -->
             <div class="form-group">
+                
                 <label for="systems">Sistemas tecnológicos y programas que se utilizan:</label>
                 <div class="input-group">
                     <textarea class="form-control" id="systems" rows="3"
@@ -365,6 +397,7 @@
     <div class="form-step card" id="step6" style="display:none;">
         <div class="card-header">Asignación de Puntuación</div>
         <div class="card-body">
+            <p>Seleccione el grado correspondiente a cada variable</p>
             <table class="table table-bordered">
                 <thead>
                     <tr>

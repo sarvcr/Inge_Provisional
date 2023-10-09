@@ -7,11 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Model\Puesto.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Model\Puesto.cs" />
+    <Compile Remove="Model\**" />
+    <Content Remove="Model\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <None Remove="Model\**" />
   </ItemGroup>
 
 </Project>
